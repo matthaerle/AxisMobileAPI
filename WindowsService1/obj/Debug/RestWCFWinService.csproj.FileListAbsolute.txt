@@ -1,0 +1,44 @@
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.exe.config
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.exe
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.pdb
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\RestWCFServiceLibrary.dll
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\RestWCFServiceLibrary.pdb
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\obj\Debug\RestWCFWinService.csprojResolveAssemblyReference.cache
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\obj\Debug\WindowsService1.exe
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\obj\Debug\WindowsService1.pdb
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.exe.config
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.exe.manifest
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.application
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.exe
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.pdb
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\EntityFramework.dll
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\RestWCFServiceLibrary.dll
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\RestWCFServiceLibrary.pdb
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\EntityFramework.xml
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\RestWCFWinService.csprojResolveAssemblyReference.cache
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\WindowsService1.ProjectInstaller.resources
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\RestWCFWinService.csproj.GenerateResource.Cache
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\WindowsService1.exe.manifest
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\WindowsService1.application
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\WindowsService1.exe
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\WindowsService1.pdb
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\AxisMobileAPIService.exe.config
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\AxisMobileAPIService.exe.manifest
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\AxisMobileAPIService.application
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\AxisMobileAPIService.exe
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\AxisMobileAPIService.pdb
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\EntityFramework.dll
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\RestWCFServiceLibrary.dll
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\RestWCFServiceLibrary.pdb
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\EntityFramework.xml
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\RestWCFWinService.csprojResolveAssemblyReference.cache
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\AxisMobileAPIService.ProjectInstaller.resources
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\RestWCFWinService.csproj.GenerateResource.Cache
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\AxisMobileAPIService.exe.manifest
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\AxisMobileAPIService.application
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\AxisMobileAPIService.exe
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\obj\Debug\AxisMobileAPIService.pdb

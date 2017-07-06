@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ARSNETModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyStore">
+    <Key>
+      <PropertyRef Name="CompanyStoreID" />
+    </Key>
+    <Property Name="CompanyStoreID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreKey" Type="char" MaxLength="36" />
+    <Property Name="StoreName" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="StoreNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="WorkWeekStartDay" Type="int" Nullable="false" />
+    <Property Name="BasePath" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SMTPOut" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="OutgoingEmailUsername" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OutgoingEmailPassword" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReturnEmailAddr" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="POSTimeoutSeconds" Type="int" Nullable="false" />
+    <Property Name="LayawayDownPmtPct" Type="int" Nullable="false" />
+    <Property Name="SpecialOrderDownPmtPct" Type="int" Nullable="false" />
+    <Property Name="QbPtFileName" Type="varchar" MaxLength="50" />
+    <Property Name="QbPtFilePath" Type="varchar" MaxLength="200" />
+    <Property Name="InstallationDate" Type="datetime" />
+    <Property Name="ConversionDate" Type="datetime" />
+    <Property Name="AccountingPostingPeriodCutoffDate" Type="datetime" />
+    <Property Name="PBlock" Type="varchar" MaxLength="128" />
+    <Property Name="GiftCardLimit" Type="money" />
+    <Property Name="LongGunWaitingDays" Type="int" />
+    <Property Name="HandGunWaitingDays" Type="int" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="DiscountLimitPct" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="MembershipExpirationNotice" Type="int" Nullable="false" />
+    <Property Name="LayawayPaymentDueNotice" Type="int" Nullable="false" />
+    <Property Name="BirthdayCardAdvance" Type="int" Nullable="false" />
+    <Property Name="CreditCardExpirationNotice" Type="int" Nullable="false" />
+    <Property Name="HouseAccountDueNotice" Type="int" Nullable="false" />
+    <Property Name="EmailAddrBoundBookPrintNotice" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="ClassRegistrationCloud" Type="bit" Nullable="false" />
+    <Property Name="GiftCardPurchaseCloud" Type="bit" Nullable="false" />
+    <Property Name="ListNewGunsOnline" Type="bit" Nullable="false" />
+    <Property Name="ListUsedGunsOnline" Type="bit" Nullable="false" />
+    <Property Name="RangeReservationsCloud" Type="bit" Nullable="false" />
+    <Property Name="EmailAddrFed33104" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="EmailAddrCLEO33104" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="FaxNumberFed331012" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="LastSynchTick" Type="bigint" Nullable="false" />
+    <Property Name="POSBackground" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="EmailReceiving" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="EmailPurchasing" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="EmailFirearms" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="EmailStoreManager" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="ServerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LayawayRestockingPct" Type="int" Nullable="false" />
+    <Property Name="SpecialOrderRestockingPct" Type="int" Nullable="false" />
+    <Property Name="PasswordPolicy" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SMTPPort" Type="int" Nullable="false" />
+    <Property Name="AutoPrintFirearmReceipt" Type="bit" Nullable="false" />
+    <Property Name="DataCenterVersion" Type="varchar" MaxLength="50" />
+    <Property Name="RegisterVersion" Type="varchar" MaxLength="50" />
+    <Property Name="GenderRequired" Type="bit" Nullable="false" />
+    <Property Name="ShowOverShortAmounts" Type="bit" Nullable="false" />
+    <Property Name="PrintCustomerPhoneNumberOnReceipt" Type="bit" Nullable="false" />
+    <Property Name="LayawayTaxDueAtInception" Type="bit" Nullable="false" />
+    <Property Name="EnableSSL" Type="bit" Nullable="false" />
+    <Property Name="RequireCustomer" Type="bit" />
+    <Property Name="AutomaticPay" Type="bit" />
+    <Property Name="DbVersion" Type="varchar" MaxLength="50" />
+    <Property Name="AccountingType" Type="tinyint" Nullable="false" />
+    <Property Name="PrintLabelsInReceivingDefault" Type="bit" Nullable="false" />
+    <Property Name="PrintLabelsInInvoicingDefault" Type="bit" Nullable="false" />
+    <Property Name="IsVendorProductDetailsDisabled" Type="bit" />
+    <Property Name="IsInstalledStore" Type="bit" Nullable="false" />
+    <Property Name="IsMultistoreEnabled" Type="bit" Nullable="false" />
+    <Property Name="IsApiEnabled" Type="bit" Nullable="false" />
+    <Property Name="SalesOrderLockMinutes" Type="tinyint" Nullable="false" />
+    <Property Name="IsQuickLoginEnabled" Type="bit" Nullable="false" />
+    <Property Name="EmailCloudNotification" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="VendorID" Type="int" />
+    <Property Name="ReceiveFirearmSerialNumber" Type="bit" Nullable="false" />
+    <Property Name="ReceiveNonFirearmSerialNumber" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateOfHire" Type="datetime" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="SecurityLevel" Type="int" Nullable="false" />
+    <Property Name="EmployeeNumber" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="SSN" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="PasswordEncrypted" Type="varchar" MaxLength="1024" />
+    <Property Name="PasswordHashed" Type="varchar" MaxLength="1024" />
+    <Property Name="PasswordDate" Type="datetime" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="LockedOutDateTime" Type="datetime" />
+    <Property Name="QuickLogin" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="FirearmCount">
+    <Key>
+      <PropertyRef Name="FirearmCountID" />
+    </Key>
+    <Property Name="FirearmCountID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="InventoryNumber" Type="int" Nullable="false" />
+    <Property Name="CountDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FirearmInventory">
+    <Key>
+      <PropertyRef Name="InventoryNumber" />
+    </Key>
+    <Property Name="InventoryNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="Manufacturer" Type="varchar" MaxLength="50" />
+    <Property Name="Model" Type="varchar" MaxLength="30" />
+    <Property Name="SerialNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BarrelLength" Type="decimal" Precision="7" Scale="4" />
+    <Property Name="GaugeCaliber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TypeOfAction" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="1280" />
+    <Property Name="Condition" Type="varchar" MaxLength="18" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+    <Property Name="Location" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="PublicDisplay" Type="bit" />
+    <Property Name="Antique" Type="bit" />
+    <Property Name="HideRetail" Type="bit" />
+    <Property Name="Importer" Type="varchar" MaxLength="50" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="UPC" Type="varchar" MaxLength="50" />
+    <Property Name="ManufacturerNbr" Type="varchar" MaxLength="20" />
+    <Property Name="InvNbr" Type="bigint" />
+    <Property Name="NewUsed" Type="varchar" MaxLength="8" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="LastScanDateTime" Type="datetime" />
+    <Property Name="FFLID" Type="int" Nullable="false" />
+    <Property Name="BoundBookNumber" Type="bigint" Nullable="false" />
+    <Property Name="RevisionNumber" Type="int" Nullable="false" />
+    <Property Name="IsLatestRevision" Type="bit" Nullable="false" />
+    <Property Name="BoundBookRecordGroupID" Type="int" />
+    <Property Name="AdditionalInformation" Type="varchar" MaxLength="1000" />
+    <Property Name="IsForm331012Firearm" Type="bit" Nullable="false" />
+    <Property Name="ReceivedCost" Type="money" />
+  </EntityType>
+  <EntityType Name="InventoryGroup">
+    <Key>
+      <PropertyRef Name="InventoryGroupID" />
+    </Key>
+    <Property Name="InventoryGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyStoreId" Type="int" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastCountSubmitDate" Type="datetime" />
+    <Property Name="LastCountSubmitEmployeeId" Type="int" />
+    <Property Name="IsStockTakingComplete" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedEmployeeId" Type="int" Nullable="false" />
+    <Property Name="CreatedMachine" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InventoryGroupProduct">
+    <Key>
+      <PropertyRef Name="InventoryGroupProductID" />
+    </Key>
+    <Property Name="InventoryGroupProductID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryGroupID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="ProductStockAdjustmentID" Type="int" />
+    <Property Name="StockDiscrepancyReason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InventoryGroupProductByMachine">
+    <Key>
+      <PropertyRef Name="InventoryGroupProductByMachineID" />
+    </Key>
+    <Property Name="InventoryGroupProductByMachineID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryGroupProductID" Type="bigint" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="MachineName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedEmployeeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="ManufacturerID" />
+    </Key>
+    <Property Name="ManufacturerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OutboundFirearm">
+    <Key>
+      <PropertyRef Name="OutboundFirearmID" />
+    </Key>
+    <Property Name="OutboundFirearmID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="TransactionNumber" Type="bigint" Nullable="false" />
+    <Property Name="InventoryNumber" Type="int" Nullable="false" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="COGSAmount" Type="money" Nullable="false" />
+    <Property Name="DiscountDetailID" Type="int" />
+    <Property Name="DispositionDate" Type="datetime" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Returned" Type="bit" />
+    <Property Name="Voided" Type="bit" />
+    <Property Name="DispositionAddressID" Type="bigint" />
+    <Property Name="E4473ID" Type="bigint" />
+    <Property Name="NICSApprovalCode" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionSerialNumber" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="ProductUPC" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="ManufacturerReference" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="ProductDescription" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="ShortDescription" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="PhysicalQoH" Type="int" Nullable="false" />
+    <Property Name="MinLevel" Type="int" Nullable="false" />
+    <Property Name="MaxLevel" Type="int" Nullable="false" />
+    <Property Name="AutoOrder" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ProductImageId" Type="uniqueidentifier" />
+    <Property Name="AccountingCategoryID" Type="int" />
+    <Property Name="IsFirearm" Type="bit" Nullable="false" />
+    <Property Name="IsProductKit" Type="bit" Nullable="false" />
+    <Property Name="ManufacturerID" Type="int" Nullable="false" />
+    <Property Name="DepartmentID" Type="int" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="ExtendedDescription" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="IsStockItem" Type="bit" Nullable="false" />
+    <Property Name="IsCase" Type="bit" Nullable="false" />
+    <Property Name="LastCost" Type="money" Nullable="false" />
+    <Property Name="AverageCost" Type="money" Nullable="false" />
+    <Property Name="QtyOnOrder" Type="int" Nullable="false" />
+    <Property Name="QtyOnOrderExcluded" Type="int" Nullable="false" />
+    <Property Name="QtyCommitted" Type="int" Nullable="false" />
+    <Property Name="IsLicense" Type="bit" Nullable="false" />
+    <Property Name="StateVendorID" Type="int" />
+    <Property Name="UnvoucheredQty" Type="int" Nullable="false" />
+    <Property Name="OrderType" Type="int" />
+    <Property Name="AutoClassification" Type="bit" />
+    <Property Name="SupplyType" Type="int" />
+    <Property Name="ItemNmbr" Type="varchar" MaxLength="50" />
+    <Property Name="IsUserDefinedUPC" Type="bit" />
+    <Property Name="IsUserDefinedUPCActive" Type="bit" />
+    <Property Name="SuggestedMin" Type="int" />
+    <Property Name="SuggestedMax" Type="int" />
+    <Property Name="AdjustedMinMaxBy" Type="int" Nullable="false" />
+    <Property Name="LastMinMaxUpdateDateTime" Type="datetime" />
+    <Property Name="LastSoldDateTime" Type="datetime" />
+    <Property Name="EstimatedWeeklySalesUnits" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="HideProductDetailsDialog" Type="bit" Nullable="false" />
+    <Property Name="ReservedProductID" Type="int" />
+    <Property Name="AgeVerification" Type="smallint" />
+    <Property Name="IsWeb" Type="bit" Nullable="false" />
+    <Property Name="WebPrice" Type="money" Nullable="false" />
+    <Property Name="HasSerialTrack" Type="bit" Nullable="false" />
+    <Property Name="HasFirearmInventory" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductStockAdjustment">
+    <Key>
+      <PropertyRef Name="ProductStockAdjustmentID" />
+    </Key>
+    <Property Name="ProductStockAdjustmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="DateStockTaken" Type="datetime" Nullable="false" />
+    <Property Name="StockVerifiedByEmployeeID" Type="int" Nullable="false" />
+    <Property Name="QOHOnBooks" Type="int" Nullable="false" />
+    <Property Name="QOHActual" Type="int" Nullable="false" />
+    <Property Name="ValueOnHandOnStockTakingDate" Type="decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="StockDiscrepancyReason" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CostVariance" Type="money" />
+    <Property Name="IsCLXSent" Type="bit" Nullable="false" />
+    <Property Name="AverageCost" Type="money" Nullable="false" />
+    <Property Name="LastCost" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SerialUPC">
+    <Key>
+      <PropertyRef Name="SerialUPCID" />
+    </Key>
+    <Property Name="SerialUPCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CompanyStore_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="CompanyStore" Type="Self.CompanyStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="CompanyStore">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FirearmCount_FirearmInventory">
+    <End Role="FirearmInventory" Type="Self.FirearmInventory" Multiplicity="1" />
+    <End Role="FirearmCount" Type="Self.FirearmCount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FirearmInventory">
+        <PropertyRef Name="InventoryNumber" />
+      </Principal>
+      <Dependent Role="FirearmCount">
+        <PropertyRef Name="InventoryNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FirearmInventory_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="FirearmInventory" Type="Self.FirearmInventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="FirearmInventory">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroup_Employee_CreatedEmployeeId">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="InventoryGroup" Type="Self.InventoryGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="InventoryGroup">
+        <PropertyRef Name="CreatedEmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroup_Employee_LastCountSubmitEmployeeId">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="InventoryGroup" Type="Self.InventoryGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="InventoryGroup">
+        <PropertyRef Name="LastCountSubmitEmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroupProduct_InventoryGroup_InventoryGroupID">
+    <End Role="InventoryGroup" Type="Self.InventoryGroup" Multiplicity="1" />
+    <End Role="InventoryGroupProduct" Type="Self.InventoryGroupProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryGroup">
+        <PropertyRef Name="InventoryGroupID" />
+      </Principal>
+      <Dependent Role="InventoryGroupProduct">
+        <PropertyRef Name="InventoryGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroupProduct_Product_ProductID">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="InventoryGroupProduct" Type="Self.InventoryGroupProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="InventoryGroupProduct">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroupProduct_ProductStockAdjustment_ProductStockAdjustmentID">
+    <End Role="ProductStockAdjustment" Type="Self.ProductStockAdjustment" Multiplicity="0..1" />
+    <End Role="InventoryGroupProduct" Type="Self.InventoryGroupProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductStockAdjustment">
+        <PropertyRef Name="ProductStockAdjustmentID" />
+      </Principal>
+      <Dependent Role="InventoryGroupProduct">
+        <PropertyRef Name="ProductStockAdjustmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroupProductByMachine_InventoryGroupProduct_InventoryGroupProductID">
+    <End Role="InventoryGroupProduct" Type="Self.InventoryGroupProduct" Multiplicity="1" />
+    <End Role="InventoryGroupProductByMachine" Type="Self.InventoryGroupProductByMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryGroupProduct">
+        <PropertyRef Name="InventoryGroupProductID" />
+      </Principal>
+      <Dependent Role="InventoryGroupProductByMachine">
+        <PropertyRef Name="InventoryGroupProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OutboundFirearm_FirearmInventory">
+    <End Role="FirearmInventory" Type="Self.FirearmInventory" Multiplicity="1" />
+    <End Role="OutboundFirearm" Type="Self.OutboundFirearm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FirearmInventory">
+        <PropertyRef Name="InventoryNumber" />
+      </Principal>
+      <Dependent Role="OutboundFirearm">
+        <PropertyRef Name="InventoryNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Manufacturer">
+    <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="ManufacturerID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ManufacturerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductStockAdjustment_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="ProductStockAdjustment" Type="Self.ProductStockAdjustment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="ProductStockAdjustment">
+        <PropertyRef Name="StockVerifiedByEmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductStockAdjustment_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductStockAdjustment" Type="Self.ProductStockAdjustment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductStockAdjustment">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SerialUPC_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="SerialUPC" Type="Self.SerialUPC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="SerialUPC">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ARSNETModelStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyStore" EntityType="Self.CompanyStore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FirearmCount" EntityType="Self.FirearmCount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FirearmInventory" EntityType="Self.FirearmInventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryGroup" EntityType="Self.InventoryGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryGroupProduct" EntityType="Self.InventoryGroupProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryGroupProductByMachine" EntityType="Self.InventoryGroupProductByMachine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutboundFirearm" EntityType="Self.OutboundFirearm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductStockAdjustment" EntityType="Self.ProductStockAdjustment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SerialUPC" EntityType="Self.SerialUPC" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CompanyStore_Company" Association="Self.FK_CompanyStore_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyStore" EntitySet="CompanyStore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FirearmCount_FirearmInventory" Association="Self.FK_FirearmCount_FirearmInventory">
+      <End Role="FirearmInventory" EntitySet="FirearmInventory" />
+      <End Role="FirearmCount" EntitySet="FirearmCount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FirearmInventory_Product" Association="Self.FK_FirearmInventory_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="FirearmInventory" EntitySet="FirearmInventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroup_Employee_CreatedEmployeeId" Association="Self.FK_InventoryGroup_Employee_CreatedEmployeeId">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="InventoryGroup" EntitySet="InventoryGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroup_Employee_LastCountSubmitEmployeeId" Association="Self.FK_InventoryGroup_Employee_LastCountSubmitEmployeeId">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="InventoryGroup" EntitySet="InventoryGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroupProduct_InventoryGroup_InventoryGroupID" Association="Self.FK_InventoryGroupProduct_InventoryGroup_InventoryGroupID">
+      <End Role="InventoryGroup" EntitySet="InventoryGroup" />
+      <End Role="InventoryGroupProduct" EntitySet="InventoryGroupProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroupProduct_Product_ProductID" Association="Self.FK_InventoryGroupProduct_Product_ProductID">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="InventoryGroupProduct" EntitySet="InventoryGroupProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroupProduct_ProductStockAdjustment_ProductStockAdjustmentID" Association="Self.FK_InventoryGroupProduct_ProductStockAdjustment_ProductStockAdjustmentID">
+      <End Role="ProductStockAdjustment" EntitySet="ProductStockAdjustment" />
+      <End Role="InventoryGroupProduct" EntitySet="InventoryGroupProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroupProductByMachine_InventoryGroupProduct_InventoryGroupProductID" Association="Self.FK_InventoryGroupProductByMachine_InventoryGroupProduct_InventoryGroupProductID">
+      <End Role="InventoryGroupProduct" EntitySet="InventoryGroupProduct" />
+      <End Role="InventoryGroupProductByMachine" EntitySet="InventoryGroupProductByMachine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OutboundFirearm_FirearmInventory" Association="Self.FK_OutboundFirearm_FirearmInventory">
+      <End Role="FirearmInventory" EntitySet="FirearmInventory" />
+      <End Role="OutboundFirearm" EntitySet="OutboundFirearm" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Department" Association="Self.FK_Product_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Manufacturer" Association="Self.FK_Product_Manufacturer">
+      <End Role="Manufacturer" EntitySet="Manufacturer" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductStockAdjustment_Employee" Association="Self.FK_ProductStockAdjustment_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="ProductStockAdjustment" EntitySet="ProductStockAdjustment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductStockAdjustment_Product" Association="Self.FK_ProductStockAdjustment_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductStockAdjustment" EntitySet="ProductStockAdjustment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SerialUPC_Product" Association="Self.FK_SerialUPC_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="SerialUPC" EntitySet="SerialUPC" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

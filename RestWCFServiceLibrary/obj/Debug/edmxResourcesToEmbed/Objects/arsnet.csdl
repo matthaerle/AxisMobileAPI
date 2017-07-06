@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ARSNETModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="StoreID" Type="Int32" Nullable="false" />
+    <Property Name="ProductUPC" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ManufacturerReference" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductDescription" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShortDescription" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PhysicalQoH" Type="Int32" Nullable="false" />
+    <Property Name="MinLevel" Type="Int32" Nullable="false" />
+    <Property Name="MaxLevel" Type="Int32" Nullable="false" />
+    <Property Name="AutoOrder" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProductImageId" Type="Guid" />
+    <Property Name="AccountingCategoryID" Type="Int32" />
+    <Property Name="IsFirearm" Type="Boolean" Nullable="false" />
+    <Property Name="IsProductKit" Type="Boolean" Nullable="false" />
+    <Property Name="ManufacturerID" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <Property Name="UpdateUserID" Type="Int32" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateMachineName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="ExtendedDescription" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsStockItem" Type="Boolean" Nullable="false" />
+    <Property Name="IsCase" Type="Boolean" Nullable="false" />
+    <Property Name="LastCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="AverageCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="QtyOnOrder" Type="Int32" Nullable="false" />
+    <Property Name="QtyOnOrderExcluded" Type="Int32" Nullable="false" />
+    <Property Name="QtyCommitted" Type="Int32" Nullable="false" />
+    <Property Name="IsLicense" Type="Boolean" Nullable="false" />
+    <Property Name="StateVendorID" Type="Int32" />
+    <Property Name="UnvoucheredQty" Type="Int32" Nullable="false" />
+    <Property Name="OrderType" Type="Int32" />
+    <Property Name="AutoClassification" Type="Boolean" />
+    <Property Name="SupplyType" Type="Int32" />
+    <Property Name="ItemNmbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsUserDefinedUPC" Type="Boolean" />
+    <Property Name="IsUserDefinedUPCActive" Type="Boolean" />
+    <Property Name="SuggestedMin" Type="Int32" />
+    <Property Name="SuggestedMax" Type="Int32" />
+    <Property Name="AdjustedMinMaxBy" Type="Int32" Nullable="false" />
+    <Property Name="LastMinMaxUpdateDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LastSoldDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EstimatedWeeklySalesUnits" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="HideProductDetailsDialog" Type="Boolean" Nullable="false" />
+    <Property Name="ReservedProductID" Type="Int32" />
+    <Property Name="AgeVerification" Type="Int16" />
+    <Property Name="IsWeb" Type="Boolean" Nullable="false" />
+    <Property Name="WebPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="HasSerialTrack" Type="Boolean" Nullable="false" />
+    <Property Name="HasFirearmInventory" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="InventoryCounts" Relationship="ARSNETModel.FK_InventoryCount_Product" FromRole="Product" ToRole="InventoryCount" />
+    <NavigationProperty Name="InventoryGroupProducts" Relationship="ARSNETModel.FK_InventoryGroupProduct_Product_ProductID" FromRole="Product" ToRole="InventoryGroupProduct" />
+    <NavigationProperty Name="Department" Relationship="ARSNETModel.FK_Product_Department" FromRole="Product" ToRole="Department" />
+    <NavigationProperty Name="Manufacturer" Relationship="ARSNETModel.FK_Product_Manufacturer" FromRole="Product" ToRole="Manufacturer" />
+  </EntityType>
+  <EntityContainer Name="ARSNETEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="InventoryCounts" EntityType="ARSNETModel.InventoryCount" />
+    <EntitySet Name="InventoryGroups" EntityType="ARSNETModel.InventoryGroup" />
+    <EntitySet Name="InventoryGroupFilters" EntityType="ARSNETModel.InventoryGroupFilter" />
+    <EntitySet Name="InventoryGroupProducts" EntityType="ARSNETModel.InventoryGroupProduct" />
+    <EntitySet Name="InventoryGroupProductByMachines" EntityType="ARSNETModel.InventoryGroupProductByMachine" />
+    <AssociationSet Name="FK_InventoryCount_Product" Association="ARSNETModel.FK_InventoryCount_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="InventoryCount" EntitySet="InventoryCounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroupFilter_InventoryGroup" Association="ARSNETModel.FK_InventoryGroupFilter_InventoryGroup">
+      <End Role="InventoryGroup" EntitySet="InventoryGroups" />
+      <End Role="InventoryGroupFilter" EntitySet="InventoryGroupFilters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroupProduct_InventoryGroup_InventoryGroupID" Association="ARSNETModel.FK_InventoryGroupProduct_InventoryGroup_InventoryGroupID">
+      <End Role="InventoryGroup" EntitySet="InventoryGroups" />
+      <End Role="InventoryGroupProduct" EntitySet="InventoryGroupProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroupProduct_Product_ProductID" Association="ARSNETModel.FK_InventoryGroupProduct_Product_ProductID">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="InventoryGroupProduct" EntitySet="InventoryGroupProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryGroupProductByMachine_InventoryGroupProduct_InventoryGroupProductID" Association="ARSNETModel.FK_InventoryGroupProductByMachine_InventoryGroupProduct_InventoryGroupProductID">
+      <End Role="InventoryGroupProduct" EntitySet="InventoryGroupProducts" />
+      <End Role="InventoryGroupProductByMachine" EntitySet="InventoryGroupProductByMachines" />
+    </AssociationSet>
+    <EntitySet Name="FirearmCounts" EntityType="ARSNETModel.FirearmCount" />
+    <EntitySet Name="Departments" EntityType="ARSNETModel.Department" />
+    <AssociationSet Name="FK_InventoryGroupFilter_Department" Association="ARSNETModel.FK_InventoryGroupFilter_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="InventoryGroupFilter" EntitySet="InventoryGroupFilters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Department" Association="ARSNETModel.FK_Product_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <EntitySet Name="Manufacturers" EntityType="ARSNETModel.Manufacturer" />
+    <AssociationSet Name="FK_InventoryGroupFilter_Manufacturer" Association="ARSNETModel.FK_InventoryGroupFilter_Manufacturer">
+      <End Role="Manufacturer" EntitySet="Manufacturers" />
+      <End Role="InventoryGroupFilter" EntitySet="InventoryGroupFilters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Manufacturer" Association="ARSNETModel.FK_Product_Manufacturer">
+      <End Role="Manufacturer" EntitySet="Manufacturers" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="InventoryCount">
+    <Key>
+      <PropertyRef Name="InventoryCountID" />
+    </Key>
+    <Property Name="InventoryCountID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="StoreID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int64" Nullable="false" />
+    <Property Name="ProductCount" Type="Int32" Nullable="false" />
+    <Property Name="InventoryDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InvEmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="Reconciled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="ARSNETModel.FK_InventoryCount_Product" FromRole="InventoryCount" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="InventoryGroup">
+    <Key>
+      <PropertyRef Name="InventoryGroupID" />
+    </Key>
+    <Property Name="InventoryGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyStoreId" Type="Int32" Nullable="false" />
+    <Property Name="GroupName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastCountSubmitDate" Type="DateTime" Precision="3" />
+    <Property Name="LastCountSubmitEmployeeId" Type="Int32" />
+    <Property Name="IsStockTakingComplete" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedEmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedMachine" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="InventoryGroupFilters" Relationship="ARSNETModel.FK_InventoryGroupFilter_InventoryGroup" FromRole="InventoryGroup" ToRole="InventoryGroupFilter" />
+    <NavigationProperty Name="InventoryGroupProducts" Relationship="ARSNETModel.FK_InventoryGroupProduct_InventoryGroup_InventoryGroupID" FromRole="InventoryGroup" ToRole="InventoryGroupProduct" />
+  </EntityType>
+  <EntityType Name="InventoryGroupFilter">
+    <Key>
+      <PropertyRef Name="InventoryGroupFilterID" />
+    </Key>
+    <Property Name="InventoryGroupFilterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryGroupID" Type="Int32" Nullable="false" />
+    <Property Name="AttributeID" Type="Int32" />
+    <Property Name="DescriptorID" Type="Int32" />
+    <Property Name="ManufacturerID" Type="Int32" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedEmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedMachine" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="InventoryGroup" Relationship="ARSNETModel.FK_InventoryGroupFilter_InventoryGroup" FromRole="InventoryGroupFilter" ToRole="InventoryGroup" />
+    <NavigationProperty Name="Department" Relationship="ARSNETModel.FK_InventoryGroupFilter_Department" FromRole="InventoryGroupFilter" ToRole="Department" />
+    <NavigationProperty Name="Manufacturer" Relationship="ARSNETModel.FK_InventoryGroupFilter_Manufacturer" FromRole="InventoryGroupFilter" ToRole="Manufacturer" />
+  </EntityType>
+  <EntityType Name="InventoryGroupProduct">
+    <Key>
+      <PropertyRef Name="InventoryGroupProductID" />
+    </Key>
+    <Property Name="InventoryGroupProductID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryGroupID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int64" Nullable="false" />
+    <Property Name="ProductStockAdjustmentID" Type="Int32" />
+    <Property Name="StockDiscrepancyReason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="InventoryGroup" Relationship="ARSNETModel.FK_InventoryGroupProduct_InventoryGroup_InventoryGroupID" FromRole="InventoryGroupProduct" ToRole="InventoryGroup" />
+    <NavigationProperty Name="Product" Relationship="ARSNETModel.FK_InventoryGroupProduct_Product_ProductID" FromRole="InventoryGroupProduct" ToRole="Product" />
+    <NavigationProperty Name="InventoryGroupProductByMachines" Relationship="ARSNETModel.FK_InventoryGroupProductByMachine_InventoryGroupProduct_InventoryGroupProductID" FromRole="InventoryGroupProduct" ToRole="InventoryGroupProductByMachine" />
+  </EntityType>
+  <EntityType Name="InventoryGroupProductByMachine">
+    <Key>
+      <PropertyRef Name="InventoryGroupProductByMachineID" />
+    </Key>
+    <Property Name="InventoryGroupProductByMachineID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InventoryGroupProductID" Type="Int64" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <Property Name="MachineName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedEmployeeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="InventoryGroupProduct" Relationship="ARSNETModel.FK_InventoryGroupProductByMachine_InventoryGroupProduct_InventoryGroupProductID" FromRole="InventoryGroupProductByMachine" ToRole="InventoryGroupProduct" />
+  </EntityType>
+  <Association Name="FK_InventoryCount_Product">
+    <End Type="ARSNETModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="ARSNETModel.InventoryCount" Role="InventoryCount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="InventoryCount">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroupFilter_InventoryGroup">
+    <End Type="ARSNETModel.InventoryGroup" Role="InventoryGroup" Multiplicity="1" />
+    <End Type="ARSNETModel.InventoryGroupFilter" Role="InventoryGroupFilter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryGroup">
+        <PropertyRef Name="InventoryGroupID" />
+      </Principal>
+      <Dependent Role="InventoryGroupFilter">
+        <PropertyRef Name="InventoryGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroupProduct_InventoryGroup_InventoryGroupID">
+    <End Type="ARSNETModel.InventoryGroup" Role="InventoryGroup" Multiplicity="1" />
+    <End Type="ARSNETModel.InventoryGroupProduct" Role="InventoryGroupProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryGroup">
+        <PropertyRef Name="InventoryGroupID" />
+      </Principal>
+      <Dependent Role="InventoryGroupProduct">
+        <PropertyRef Name="InventoryGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroupProduct_Product_ProductID">
+    <End Type="ARSNETModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="ARSNETModel.InventoryGroupProduct" Role="InventoryGroupProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="InventoryGroupProduct">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryGroupProductByMachine_InventoryGroupProduct_InventoryGroupProductID">
+    <End Type="ARSNETModel.InventoryGroupProduct" Role="InventoryGroupProduct" Multiplicity="1" />
+    <End Type="ARSNETModel.InventoryGroupProductByMachine" Role="InventoryGroupProductByMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryGroupProduct">
+        <PropertyRef Name="InventoryGroupProductID" />
+      </Principal>
+      <Dependent Role="InventoryGroupProductByMachine">
+        <PropertyRef Name="InventoryGroupProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FirearmCount">
+    <Key>
+      <PropertyRef Name="FirearmCountID" />
+    </Key>
+    <Property Name="FirearmCountID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="StoreID" Type="Int32" Nullable="false" />
+    <Property Name="InventoryNumber" Type="Int32" Nullable="false" />
+    <Property Name="CountDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateUserID" Type="Int32" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateMachineName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="InventoryGroupFilters" Relationship="ARSNETModel.FK_InventoryGroupFilter_Department" FromRole="Department" ToRole="InventoryGroupFilter" />
+    <NavigationProperty Name="Products" Relationship="ARSNETModel.FK_Product_Department" FromRole="Department" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_InventoryGroupFilter_Department">
+    <End Type="ARSNETModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="ARSNETModel.InventoryGroupFilter" Role="InventoryGroupFilter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="InventoryGroupFilter">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Department">
+    <End Type="ARSNETModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="ARSNETModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="ManufacturerID" />
+    </Key>
+    <Property Name="ManufacturerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="InventoryGroupFilters" Relationship="ARSNETModel.FK_InventoryGroupFilter_Manufacturer" FromRole="Manufacturer" ToRole="InventoryGroupFilter" />
+    <NavigationProperty Name="Products" Relationship="ARSNETModel.FK_Product_Manufacturer" FromRole="Manufacturer" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_InventoryGroupFilter_Manufacturer">
+    <End Type="ARSNETModel.Manufacturer" Role="Manufacturer" Multiplicity="0..1" />
+    <End Type="ARSNETModel.InventoryGroupFilter" Role="InventoryGroupFilter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="ManufacturerID" />
+      </Principal>
+      <Dependent Role="InventoryGroupFilter">
+        <PropertyRef Name="ManufacturerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Manufacturer">
+    <End Type="ARSNETModel.Manufacturer" Role="Manufacturer" Multiplicity="1" />
+    <End Type="ARSNETModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="ManufacturerID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ManufacturerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

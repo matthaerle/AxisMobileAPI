@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CA6B135-C76C-41D8-810B-49A5F5D798C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RestWCFServiceLibrary</RootNamespace>
+    <AssemblyName>RestWCFServiceLibrary</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\arsnet.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>arsnet.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\arsnet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\arsnet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>arsnet.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Company.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CompanyStore.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Department.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Employee.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FirearmCount.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FirearmInventory.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\InventoryGroup.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\InventoryGroupProduct.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\InventoryGroupProductByMachine.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Manufacturer.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OutboundFirearm.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Product.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ProductStockAdjustment.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SerialUPC.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRestWCFServiceLibrary.cs" />
+    <Compile Include="MethodObject\FirearmInfo.cs" />
+    <Compile Include="MethodObject\GetEmployees.cs" />
+    <Compile Include="MethodObject\IsConnected.cs" />
+    <Compile Include="MethodObject\FirearmStockScan.cs" />
+    <Compile Include="MethodObject\FirearmStockUpdate.cs" />
+    <Compile Include="MethodObject\GetInventoryGroupProductID.cs" />
+    <Compile Include="MethodObject\IsFirearmDisposed.cs" />
+    <Compile Include="MethodObject\SendInventoryGroup.cs" />
+    <Compile Include="MethodObject\InventoryGroupProduct.cs" />
+    <Compile Include="MethodObject\MinMaxUpdate.cs" />
+    <Compile Include="MethodObject\SearchByUPC.cs" />
+    <Compile Include="MethodObject\SendInventoryGroupProductID.cs" />
+    <Compile Include="MethodObject\SubmitItemCount.cs" />
+    <Compile Include="MethodObject\UpdateStatus.cs" />
+    <Compile Include="ObjectViews\ProductView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RestWCFServiceLibrary.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Entities\arsnet.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>arsnet1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\arsnet.edmx.diagram">
+      <DependentUpon>arsnet.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\arsnet.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>arsnet.edmx</DependentUpon>
+      <LastGenOutput>arsnet.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\arsnet.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>arsnet.edmx</DependentUpon>
+      <LastGenOutput>arsnet.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio</VSToolsPath>
+    <WcfServiceModelTargetPath>$(VSToolsPath)\WCF</WcfServiceModelTargetPath>
+  </PropertyGroup>
+  <Import Project="$(WcfServiceModelTargetPath)\Microsoft.VisualStudio.ServiceModel.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

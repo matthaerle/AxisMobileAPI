@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2b5e183052604d52b60a9916b3f8b96c" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="ARSNETModel.Department" Width="1.5" PointX="1.125" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARSNETModel.Employee" Width="1.75" PointX="8.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARSNETModel.FirearmCount" Width="1.75" PointX="8.125" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARSNETModel.InventoryGroup" Width="2.125" PointX="10.875" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARSNETModel.InventoryGroupProduct" Width="2" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARSNETModel.InventoryGroupProductByMachine" Width="2.625" PointX="7.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARSNETModel.Manufacturer" Width="1.5" PointX="1.125" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARSNETModel.Product" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARSNETModel.ProductStockAdjustment" Width="2.375" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ARSNETModel.FK_Product_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="ARSNETModel.FK_InventoryGroup_Employee_CreatedEmployeeId" ManuallyRouted="false" />
+        <AssociationConnector Association="ARSNETModel.FK_InventoryGroup_Employee_LastCountSubmitEmployeeId" ManuallyRouted="false" />
+        <AssociationConnector Association="ARSNETModel.FK_ProductStockAdjustment_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="ARSNETModel.FK_InventoryGroupProduct_InventoryGroup_InventoryGroupID" ManuallyRouted="false" />
+        <AssociationConnector Association="ARSNETModel.FK_InventoryGroupProduct_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="ARSNETModel.FK_InventoryGroupProduct_ProductStockAdjustment_ProductStockAdjustmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="ARSNETModel.FK_InventoryGroupProductByMachine_InventoryGroupProduct_InventoryGroupProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="ARSNETModel.FK_Product_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="ARSNETModel.FK_ProductStockAdjustment_Product" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ARSNETModel.FirearmInventory" Width="2.125" PointX="5.25" PointY="10.5" />
+        <EntityTypeShape EntityType="ARSNETModel.OutboundFirearm" Width="2" PointX="8.125" PointY="13.875" />
+        <AssociationConnector Association="ARSNETModel.FK_FirearmCount_FirearmInventory" />
+        <AssociationConnector Association="ARSNETModel.FK_FirearmInventory_Product" />
+        <AssociationConnector Association="ARSNETModel.FK_OutboundFirearm_FirearmInventory" />
+        <EntityTypeShape EntityType="ARSNETModel.CompanyStore" Width="1.5" PointX="11.375" PointY="12.75" />
+        <EntityTypeShape EntityType="ARSNETModel.Company" Width="1.5" PointX="9.125" PointY="20.625" />
+        <AssociationConnector Association="ARSNETModel.FK_CompanyStore_Company" />
+        <EntityTypeShape EntityType="ARSNETModel.SerialUPC" Width="1.5" PointX="3" PointY="15.5" />
+        <AssociationConnector Association="ARSNETModel.FK_SerialUPC_Product" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

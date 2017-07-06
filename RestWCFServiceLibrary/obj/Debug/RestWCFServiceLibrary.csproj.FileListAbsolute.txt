@@ -1,0 +1,30 @@
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.dll.config
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.dll
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.pdb
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.csprojResolveAssemblyReference.cache
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.dll
+C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.pdb
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.dll.config
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.dll
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.pdb
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\AutoMapper.dll
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.dll
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\AutoMapper.xml
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.xml
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.dll
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.pdb
+C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.csprojResolveAssemblyReference.cache
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.dll.config
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.dll
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.pdb
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\AutoMapper.dll
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.dll
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\AutoMapper.xml
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.xml
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.dll
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.pdb
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.csprojResolveAssemblyReference.cache

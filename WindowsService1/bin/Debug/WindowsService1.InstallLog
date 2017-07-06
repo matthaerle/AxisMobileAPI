@@ -1,0 +1,47 @@
+﻿Installing assembly 'C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   i = 
+   logfile = C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.exe
+   logtoconsole = 
+Installing service Demo...
+Service Demo has been successfully installed.
+Creating EventLog source Demo in log Application...
+Committing assembly 'C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   i = 
+   logfile = C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.exe
+   logtoconsole = 
+Uninstalling assembly 'C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = C:\PROJECT\STAR-P\WcfRestfulWithWindowsHostDemo\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source Demo.
+Service Demo is being removed from the system...
+Service Demo was successfully removed from the system.
+Attempt to stop service Demo.
+Installing assembly 'C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   i = 
+   logfile = C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.exe
+   logtoconsole = 
+Installing service Demo...
+Service Demo has been successfully installed.
+Creating EventLog source Demo in log Application...
+Committing assembly 'C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   i = 
+   logfile = C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.exe
+   logtoconsole = 
+Uninstalling assembly 'C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.InstallLog
+   assemblypath = C:\Users\mhaerle\Downloads\WcfRestfulWithWindowsHostDemo_v1\WindowsService1\bin\Debug\WindowsService1.exe
+Removing EventLog source Demo.
+Service Demo is being removed from the system...
+Service Demo was successfully removed from the system.
