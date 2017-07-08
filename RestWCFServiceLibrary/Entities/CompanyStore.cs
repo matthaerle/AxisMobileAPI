@@ -91,6 +91,7 @@ namespace RestWCFServiceLibrary.Entities
         public Nullable<int> VendorID { get; set; }
         public bool ReceiveFirearmSerialNumber { get; set; }
         public bool ReceiveNonFirearmSerialNumber { get; set; }
+        public bool IsCreditHoldEnabled { get; set; }
     
         public virtual Company Company { get; set; }
     }

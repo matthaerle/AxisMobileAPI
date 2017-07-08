@@ -96,6 +96,12 @@
     <Compile Include="Entities\FirearmInventory.cs">
       <DependentUpon>arsnet.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\FirearmType.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\GunsmithFirearmInventory.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\InventoryGroup.cs">
       <DependentUpon>arsnet.tt</DependentUpon>
     </Compile>

@@ -25,6 +25,6 @@ C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestful
 C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\AutoMapper.xml
 C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.xml
 C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.csprojResolveAssemblyReference.cache
 C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.dll
 C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.pdb
-C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.csprojResolveAssemblyReference.cache

@@ -34,6 +34,8 @@
         <AssociationConnector Association="ARSNETModel.FK_CompanyStore_Company" />
         <EntityTypeShape EntityType="ARSNETModel.SerialUPC" Width="1.5" PointX="3" PointY="15.5" />
         <AssociationConnector Association="ARSNETModel.FK_SerialUPC_Product" />
+        <EntityTypeShape EntityType="ARSNETModel.FirearmType" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ARSNETModel.GunsmithFirearmInventory" Width="1.5" PointX="13.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

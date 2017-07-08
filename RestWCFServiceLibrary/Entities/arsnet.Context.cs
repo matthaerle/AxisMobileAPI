@@ -39,5 +39,7 @@ namespace RestWCFServiceLibrary.Entities
         public virtual DbSet<CompanyStore> CompanyStores { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<SerialUPC> SerialUPCs { get; set; }
+        public virtual DbSet<FirearmType> FirearmTypes { get; set; }
+        public virtual DbSet<GunsmithFirearmInventory> GunsmithFirearmInventories { get; set; }
     }
 }

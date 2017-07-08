@@ -76,6 +76,8 @@ namespace RestWCFServiceLibrary.Entities
         public decimal WebPrice { get; set; }
         public bool HasSerialTrack { get; set; }
         public bool HasFirearmInventory { get; set; }
+        public int ManufacturerCommittedQty { get; set; }
+        public int OriginatingStoreId { get; set; }
     
         public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

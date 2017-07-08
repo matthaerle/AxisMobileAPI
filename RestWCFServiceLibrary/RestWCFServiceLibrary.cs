@@ -17,8 +17,12 @@ namespace RestWCFServiceLibrary
                 List<SendInventoryGroup> inventoryGroupsList = new List<SendInventoryGroup>();
                 using (var arsnet = new ARSNETEntities())
                 {
-                    var invGroups = (from i in arsnet.InventoryGroups
+                    /*var invGroups = (from i in arsnet.InventoryGroups
                                      join prod in arsnet.InventoryGroupProducts on i.InventoryGroupID equals prod.InventoryGroupID
+                                     where i.IsStockTakingComplete == false
+                                     select i);
+                                     */
+                    var invGroups = (from i in arsnet.InventoryGroups
                                      where i.IsStockTakingComplete == false
                                      select i);
                     foreach (var groups in invGroups)
@@ -26,6 +30,7 @@ namespace RestWCFServiceLibrary
                         SendInventoryGroup inventoryGroups = new SendInventoryGroup();
                         inventoryGroups.InventoryGroupID = groups.InventoryGroupID;
                         inventoryGroups.GroupName = groups.GroupName;
+                        inventoryGroups.ProductCount = groups.InventoryGroupProducts.Count;
                         inventoryGroupsList.Add(inventoryGroups);
                     }
                                  }
@@ -227,51 +232,163 @@ namespace RestWCFServiceLibrary
         }
         public IsFirearmDisposed VerifyFirearmNotDisposed(FirearmStockScan firearmStock)
         {
+            
             try
             {
-                IsFirearmDisposed isFirearmDisposed = new IsFirearmDisposed();
-                using (var arsnet = new ARSNETEntities())
+                switch (firearmStock.BoundBookType)
                 {
-                    if (firearmStock.LogScanned)
-                    {
-                        var firearmInfo = (from bb in arsnet.FirearmInventories
-                                           where bb.InvNbr == firearmStock.Log
-                                           && bb.IsLatestRevision == true
-                                           && bb.Active == true
-                                           select bb).SingleOrDefault();
-                        if (firearmInfo.Status == "I")
+                    
+                    
+                    case ("NFA"):
+                        using (var arsnet = new ARSNETEntities())
                         {
-                            isFirearmDisposed.Disposed = false;
-                            isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                            IsFirearmDisposed isFirearmDisposed;
+                            if (firearmStock.LogScanned)
+                            {
+                                isFirearmDisposed = new IsFirearmDisposed();
+                                var firearmInfo = (from ft in arsnet.FirearmTypes
+                                                   where ft.Active == true
+                                                   && ft.NFAind == true
+                                                   from bb in arsnet.FirearmInventories
+                                                   where bb.InvNbr == firearmStock.Log
+                                                   && bb.IsLatestRevision == true
+                                                   && bb.Active == true
+                                                   && bb.TypeOfAction == ft.TypeDesc
+                                                   select bb).SingleOrDefault();
+                                if (firearmInfo.Status == "I")
+                                {
+                                    isFirearmDisposed.Disposed = false;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                                }
+                                else
+                                {
+                                    isFirearmDisposed.Disposed = true;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                                }
+                                return isFirearmDisposed;
+                            }
+                            else if (firearmStock.SerialScanned)
+                            {
+                                isFirearmDisposed = new IsFirearmDisposed();
+                                var firearmInfo = (from bb in arsnet.FirearmInventories
+                                                   where bb.SerialNumber == firearmStock.SerialNumber
+                                                   && bb.IsLatestRevision == true
+                                                   && bb.Active == true
+                                                   select bb).SingleOrDefault();
+                                if (firearmInfo.Status == "I")
+                                {
+                                    isFirearmDisposed.Disposed = false;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                                }
+                                else
+                                {
+                                    isFirearmDisposed.Disposed = true;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                                }
+                                return isFirearmDisposed;
+                            }
+                            return null;
                         }
-                        else
+                    case ("NON-NFA"):
+                        using (var arsnet = new ARSNETEntities())
                         {
-                            isFirearmDisposed.Disposed = true;
-                            isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                            IsFirearmDisposed isFirearmDisposed;
+                            if (firearmStock.LogScanned)
+                            {
+                                isFirearmDisposed = new IsFirearmDisposed();
+                                var firearmInfo = ( from ft in arsnet.FirearmTypes
+                                                    where ft.Active == true
+                                                    && ft.NFAind == false
+                                                    from bb in arsnet.FirearmInventories
+                                                    where bb.InvNbr == firearmStock.Log
+                                                    && bb.IsLatestRevision == true
+                                                    && bb.Active == true
+                                                    && bb.TypeOfAction == ft.TypeDesc
+                                                    select bb).SingleOrDefault();
+                                if (firearmInfo.Status == "I")
+                                {
+                                    isFirearmDisposed.Disposed = false;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                                }
+                                else
+                                {
+                                    isFirearmDisposed.Disposed = true;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                                }
+                                return isFirearmDisposed;
+                            }
+                            else if (firearmStock.SerialScanned)
+                            {
+                                isFirearmDisposed = new IsFirearmDisposed();
+                                var firearmInfo = (from bb in arsnet.FirearmInventories
+                                                   where bb.SerialNumber == firearmStock.SerialNumber
+                                                   && bb.IsLatestRevision == true
+                                                   && bb.Active == true
+                                                   select bb).SingleOrDefault();
+                                if (firearmInfo.Status == "I")
+                                {
+                                    isFirearmDisposed.Disposed = false;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                                }
+                                else
+                                {
+                                    isFirearmDisposed.Disposed = true;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                                }
+                                return isFirearmDisposed;
+                            }
+                            return null;
                         }
-                            
-                    }
-                    else if (firearmStock.SerialScanned)
-                    {
-                        var firearmInfo = (from bb in arsnet.FirearmInventories
-                                           where bb.SerialNumber == firearmStock.SerialNumber
-                                           && bb.IsLatestRevision == true
-                                           && bb.Active == true
-                                           select bb).SingleOrDefault();
-                        if (firearmInfo.Status == "I")
+                    case ("GUNSMITHING"):
+                        
+                        using (var arsnet = new ARSNETEntities())
                         {
-                            isFirearmDisposed.Disposed = false;
-                            isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
+                            IsFirearmDisposed isFirearmDisposed;
+                            if (firearmStock.LogScanned)
+                            {
+                                isFirearmDisposed = new IsFirearmDisposed();
+                                var firearmInfo = (from bb in arsnet.GunsmithFirearmInventories
+                                                   where bb.LogNumber == firearmStock.Log
+                                                   && bb.IsLatestRevision == true
+                                                   && bb.Active == true
+                                                   select bb).SingleOrDefault();
+                                if (firearmInfo.Status == "O")
+                                {
+                                    isFirearmDisposed.Disposed = true;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.GunsmithFirearmInventoryID;
+                                }
+                                else
+                                {
+                                    isFirearmDisposed.Disposed = false;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.GunsmithFirearmInventoryID;
+                                }
+                                return isFirearmDisposed;
+                            }
+                            else if (firearmStock.SerialScanned)
+                            {
+                                isFirearmDisposed = new IsFirearmDisposed();
+                                var firearmInfo = (from bb in arsnet.GunsmithFirearmInventories
+                                                   where bb.LogNumber == firearmStock.Log
+                                                   && bb.IsLatestRevision == true
+                                                   && bb.Active == true
+                                                   select bb).SingleOrDefault();
+                                if (firearmInfo.Status == "O")
+                                {
+                                    isFirearmDisposed.Disposed = true;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.GunsmithFirearmInventoryID;
+                                }
+                                else
+                                {
+                                    isFirearmDisposed.Disposed = false;
+                                    isFirearmDisposed.InventoryNumber = firearmInfo.GunsmithFirearmInventoryID;
+                                }
+                                return isFirearmDisposed;
+                            }
+                            return null;
                         }
-                        else
-                        {
-                            isFirearmDisposed.Disposed = true;
-                            isFirearmDisposed.InventoryNumber = firearmInfo.InventoryNumber;
-                        }
-                    }
-
+                    default:
+                        return null;
                 }
-                return isFirearmDisposed;
             } catch (Exception e)
             {
                 EventLog.WriteEntry("Axis Mobile API", e.Message + " \n " + e.GetBaseException());
@@ -282,39 +399,63 @@ namespace RestWCFServiceLibrary
         {
             try
             {
-                using (var arsnet = new ARSNETEntities())
+                switch (firearmStock.BoundBookType)
                 {
-                    //Getting CompanyID and StoreID
-                    var storeInfo = (from str in arsnet.CompanyStores
-                                     select new { str.CompanyID, str.CompanyStoreID }).FirstOrDefault();
-                    //Getting firearm record that last count date is going to be updated.
-                    var firearm = (from firearmTbl in arsnet.FirearmInventories
-                                   where firearmTbl.InventoryNumber == firearmStock.InventoryNumber
-                                   select firearmTbl).FirstOrDefault();
-                    firearm.LastScanDateTime = DateTime.Today;
-                    firearm.UpdateUserID = firearmStock.EmployeeID;
-                    firearm.UpdateDateTime = DateTime.Now;
-                    //Hardcoding machine name
-                    firearm.UpdateMachineName = firearmStock.MachineName;
-                    arsnet.SaveChanges();
+                    case "NON-NFA":
+                    case "NFA-NFA":
+                        using (var arsnet = new ARSNETEntities())
+                        {
+                            //Getting CompanyID and StoreID
+                            var storeInfo = (from str in arsnet.CompanyStores
+                                             select new { str.CompanyID, str.CompanyStoreID }).FirstOrDefault();
+                            //Getting firearm record that last count date is going to be updated.
+                            var firearm = (from firearmTbl in arsnet.FirearmInventories
+                                           where firearmTbl.InventoryNumber == firearmStock.InventoryNumber
+                                           select firearmTbl).FirstOrDefault();
+                            firearm.LastScanDateTime = DateTime.Today;
+                            firearm.UpdateUserID = firearmStock.EmployeeID;
+                            firearm.UpdateDateTime = DateTime.Now;
+                            //Hardcoding machine name
+                            firearm.UpdateMachineName = firearmStock.MachineName;
+                            arsnet.SaveChanges();
 
-                    FirearmCount fCountInsert = new FirearmCount
-                    {
-                        CompanyID = storeInfo.CompanyID,
-                        StoreID = storeInfo.CompanyStoreID,
-                        InventoryNumber = firearmStock.InventoryNumber,
-                        CountDateTime = DateTime.Now,
-                        UpdateUserID = firearmStock.EmployeeID,
-                        UpdateDateTime = DateTime.Now,
-                        //Hardcoded machine name
-                        UpdateMachineName = firearmStock.MachineName,
-                        Active = true
-                    };
-                    arsnet.FirearmCounts.Add(fCountInsert);
-                    arsnet.SaveChanges();
-                    UpdateStatus updateStatus = new UpdateStatus { IsSuccesfull = true };
-                    return updateStatus;
+                            FirearmCount fCountInsert = new FirearmCount
+                            {
+                                CompanyID = storeInfo.CompanyID,
+                                StoreID = storeInfo.CompanyStoreID,
+                                InventoryNumber = firearmStock.InventoryNumber,
+                                CountDateTime = DateTime.Now,
+                                UpdateUserID = firearmStock.EmployeeID,
+                                UpdateDateTime = DateTime.Now,
+                                //Hardcoded machine name
+                                UpdateMachineName = firearmStock.MachineName,
+                                Active = true
+                            };
+                            arsnet.FirearmCounts.Add(fCountInsert);
+                            arsnet.SaveChanges();
+                            UpdateStatus updateStatus = new UpdateStatus { IsSuccesfull = true };
+                            return updateStatus;
+                        }
+                    case "GUNSMITHING":
+                        using (var arsnet = new ARSNETEntities())
+                        {
+                            var storeInfo = (from str in arsnet.CompanyStores
+                                             select new { str.CompanyID, str.CompanyStoreID }).FirstOrDefault();
+                            var firearm = (from firearmTbl in arsnet.GunsmithFirearmInventories
+                                           where firearmTbl.GunsmithFirearmInventoryID == firearmStock.InventoryNumber
+                                           select firearmTbl).FirstOrDefault();
+                            firearm.LastScanDateTime = DateTime.Today;
+                            firearm.UpdateUserID = firearmStock.EmployeeID;
+                            firearm.UpdateDateTime = DateTime.Now;
+                            //Hardcoding machine name
+                            firearm.UpdateMachineName = firearmStock.MachineName;
+                            arsnet.SaveChanges();
+
+                        }
+
+                            break;
                 }
+                
             } catch (Exception e)
             {
                 EventLog.WriteEntry("Axis Mobile API", e.Message + " \n " + e.GetBaseException());

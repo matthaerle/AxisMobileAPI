@@ -16,5 +16,7 @@ namespace RestWCFServiceLibrary.MethodObject
         public int EmployeeID { get; set; }
         [DataMember]
         public string MachineName { get; set; }
+        [DataMember]
+        public string BoundBookType { get; set; }
     }
 }

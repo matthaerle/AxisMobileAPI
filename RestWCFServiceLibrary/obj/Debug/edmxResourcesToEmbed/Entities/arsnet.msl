@@ -103,6 +103,8 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="ARSNETModel.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="OriginatingStoreId" ColumnName="OriginatingStoreId" />
+          <ScalarProperty Name="ManufacturerCommittedQty" ColumnName="ManufacturerCommittedQty" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
           <ScalarProperty Name="StoreID" ColumnName="StoreID" />
@@ -253,6 +255,7 @@
     <EntitySetMapping Name="CompanyStores">
       <EntityTypeMapping TypeName="ARSNETModel.CompanyStore">
         <MappingFragment StoreEntitySet="CompanyStore">
+          <ScalarProperty Name="IsCreditHoldEnabled" ColumnName="IsCreditHoldEnabled" />
           <ScalarProperty Name="ReceiveNonFirearmSerialNumber" ColumnName="ReceiveNonFirearmSerialNumber" />
           <ScalarProperty Name="ReceiveFirearmSerialNumber" ColumnName="ReceiveFirearmSerialNumber" />
           <ScalarProperty Name="VendorID" ColumnName="VendorID" />
@@ -356,6 +359,62 @@
           <ScalarProperty Name="StoreID" ColumnName="StoreID" />
           <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
           <ScalarProperty Name="SerialUPCID" ColumnName="SerialUPCID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FirearmTypes">
+      <EntityTypeMapping TypeName="ARSNETModel.FirearmType">
+        <MappingFragment StoreEntitySet="FirearmType">
+          <ScalarProperty Name="AtfType" ColumnName="AtfType" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UpdateMachineName" ColumnName="UpdateMachineName" />
+          <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+          <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+          <ScalarProperty Name="NFAind" ColumnName="NFAind" />
+          <ScalarProperty Name="TypeDesc" ColumnName="TypeDesc" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="FirearmTypeID" ColumnName="FirearmTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GunsmithFirearmInventories">
+      <EntityTypeMapping TypeName="ARSNETModel.GunsmithFirearmInventory">
+        <MappingFragment StoreEntitySet="GunsmithFirearmInventory">
+          <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+          <ScalarProperty Name="BoundBookRecordGroupID" ColumnName="BoundBookRecordGroupID" />
+          <ScalarProperty Name="IsLatestRevision" ColumnName="IsLatestRevision" />
+          <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+          <ScalarProperty Name="BoundBookNumber" ColumnName="BoundBookNumber" />
+          <ScalarProperty Name="LogNumber" ColumnName="LogNumber" />
+          <ScalarProperty Name="TransactionSerialNumber" ColumnName="TransactionSerialNumber" />
+          <ScalarProperty Name="NICSApprovalCode" ColumnName="NICSApprovalCode" />
+          <ScalarProperty Name="E4473ID" ColumnName="E4473ID" />
+          <ScalarProperty Name="DispositionAddressID" ColumnName="DispositionAddressID" />
+          <ScalarProperty Name="AcquisitionAddressID" ColumnName="AcquisitionAddressID" />
+          <ScalarProperty Name="FFLID" ColumnName="FFLID" />
+          <ScalarProperty Name="LastScanDateTime" ColumnName="LastScanDateTime" />
+          <ScalarProperty Name="OutboundTransactionNumber" ColumnName="OutboundTransactionNumber" />
+          <ScalarProperty Name="Importer" ColumnName="Importer" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UpdateMachineName" ColumnName="UpdateMachineName" />
+          <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+          <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+          <ScalarProperty Name="VendorOutID" ColumnName="VendorOutID" />
+          <ScalarProperty Name="CustomerOutID" ColumnName="CustomerOutID" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TypeOfAction" ColumnName="TypeOfAction" />
+          <ScalarProperty Name="GaugeCaliber" ColumnName="GaugeCaliber" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="GunsmithFirearmInventoryID" ColumnName="GunsmithFirearmInventoryID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

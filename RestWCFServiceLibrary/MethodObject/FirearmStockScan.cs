@@ -18,5 +18,7 @@ namespace RestWCFServiceLibrary.MethodObject
         public bool SerialScanned { get; set; }
         [DataMember]
         public bool LogScanned { get; set; }
+        [DataMember]
+        public string BoundBookType { get; set; }
     }
 }

@@ -92,6 +92,7 @@
     <Property Name="VendorID" Type="int" />
     <Property Name="ReceiveFirearmSerialNumber" Type="bit" Nullable="false" />
     <Property Name="ReceiveNonFirearmSerialNumber" Type="bit" Nullable="false" />
+    <Property Name="IsCreditHoldEnabled" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Department">
     <Key>
@@ -181,6 +182,60 @@
     <Property Name="AdditionalInformation" Type="varchar" MaxLength="1000" />
     <Property Name="IsForm331012Firearm" Type="bit" Nullable="false" />
     <Property Name="ReceivedCost" Type="money" />
+  </EntityType>
+  <EntityType Name="FirearmType">
+    <Key>
+      <PropertyRef Name="FirearmTypeID" />
+    </Key>
+    <Property Name="FirearmTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TypeDesc" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NFAind" Type="bit" Nullable="false" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="AtfType" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="GunsmithFirearmInventory">
+    <Key>
+      <PropertyRef Name="GunsmithFirearmInventoryID" />
+    </Key>
+    <Property Name="GunsmithFirearmInventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="TransactionNumber" Type="bigint" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="VendorID" Type="int" />
+    <Property Name="Manufacturer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Model" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="SerialNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="GaugeCaliber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TypeOfAction" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DateIn" Type="datetime" Nullable="false" />
+    <Property Name="DateOut" Type="datetime" />
+    <Property Name="CustomerOutID" Type="int" />
+    <Property Name="VendorOutID" Type="int" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Importer" Type="varchar" MaxLength="50" />
+    <Property Name="OutboundTransactionNumber" Type="bigint" />
+    <Property Name="LastScanDateTime" Type="datetime" />
+    <Property Name="FFLID" Type="int" Nullable="false" />
+    <Property Name="AcquisitionAddressID" Type="bigint" />
+    <Property Name="DispositionAddressID" Type="bigint" />
+    <Property Name="E4473ID" Type="bigint" />
+    <Property Name="NICSApprovalCode" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionSerialNumber" Type="varchar" MaxLength="100" />
+    <Property Name="LogNumber" Type="bigint" Nullable="false" />
+    <Property Name="BoundBookNumber" Type="bigint" Nullable="false" />
+    <Property Name="RevisionNumber" Type="int" Nullable="false" />
+    <Property Name="IsLatestRevision" Type="bit" Nullable="false" />
+    <Property Name="BoundBookRecordGroupID" Type="int" />
+    <Property Name="AdditionalInformation" Type="varchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="InventoryGroup">
     <Key>
@@ -307,6 +362,8 @@
     <Property Name="WebPrice" Type="money" Nullable="false" />
     <Property Name="HasSerialTrack" Type="bit" Nullable="false" />
     <Property Name="HasFirearmInventory" Type="bit" Nullable="false" />
+    <Property Name="ManufacturerCommittedQty" Type="int" Nullable="false" />
+    <Property Name="OriginatingStoreId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ProductStockAdjustment">
     <Key>
@@ -531,6 +588,8 @@
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FirearmCount" EntityType="Self.FirearmCount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FirearmInventory" EntityType="Self.FirearmInventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FirearmType" EntityType="Self.FirearmType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GunsmithFirearmInventory" EntityType="Self.GunsmithFirearmInventory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventoryGroup" EntityType="Self.InventoryGroup" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventoryGroupProduct" EntityType="Self.InventoryGroupProduct" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventoryGroupProductByMachine" EntityType="Self.InventoryGroupProductByMachine" Schema="dbo" store:Type="Tables" />
