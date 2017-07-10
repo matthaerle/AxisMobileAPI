@@ -630,6 +630,66 @@ namespace RestWCFServiceLibrary
                             }
                             return null;
                         }
+                    case "GUNSMITHING":
+                        using (var arsnet = new ARSNETEntities())
+                        {
+                            FirearmInfo firearmInfoJson;
+                            if (firearmStock.LogScanned)
+                            {
+                                firearmInfoJson = new FirearmInfo();
+                                var firearmInfo = (from ft in arsnet.FirearmTypes
+                                                   where ft.Active == true
+                                                   && ft.NFAind == false
+                                                   from bb in arsnet.GunsmithFirearmInventories
+                                                   where bb.LogNumber == firearmStock.Log
+                                                   && bb.IsLatestRevision == true
+                                                   && bb.Active == true
+                                                   && bb.TypeOfAction == ft.TypeDesc
+                                                   select bb).SingleOrDefault();
+                                firearmInfoJson.InventoryNumber = firearmInfo.GunsmithFirearmInventoryID;
+                                firearmInfoJson.Description = "Gunsmithing Firearm";
+                                firearmInfoJson.GaugeCaliber = firearmInfo.GaugeCaliber;
+                                firearmInfoJson.InvNbr = firearmInfo.LogNumber;
+                                firearmInfoJson.Manufacturer = firearmInfo.Manufacturer;
+                                firearmInfoJson.Model = firearmInfo.Model;
+                                firearmInfoJson.NewUsed = "Used";
+                                firearmInfoJson.SerialNumber = firearmInfo.SerialNumber;
+                                firearmInfoJson.Status = firearmInfo.Status;
+                                firearmInfoJson.TypeOfAction = firearmInfo.TypeOfAction;
+                                firearmInfoJson.UPC = "";
+                                firearmInfoJson.Importer = firearmInfo.Importer;
+
+                                return firearmInfoJson;
+                            }
+                            else if (firearmStock.SerialScanned)
+                            {
+                                firearmInfoJson = new FirearmInfo();
+                                var firearmInfo = (from ft in arsnet.FirearmTypes
+                                                   where ft.Active == true
+                                                   && ft.NFAind == false
+                                                   from bb in arsnet.GunsmithFirearmInventories
+                                                   where bb.SerialNumber == firearmStock.SerialNumber
+                                                   && bb.IsLatestRevision == true
+                                                   && bb.Active == true
+                                                   && bb.TypeOfAction == ft.TypeDesc
+                                                   select bb).SingleOrDefault();
+                                firearmInfoJson.InventoryNumber = firearmInfo.GunsmithFirearmInventoryID;
+                                firearmInfoJson.Description = "Gunsmithing Firearm";
+                                firearmInfoJson.GaugeCaliber = firearmInfo.GaugeCaliber;
+                                firearmInfoJson.InvNbr = firearmInfo.LogNumber;
+                                firearmInfoJson.Manufacturer = firearmInfo.Manufacturer;
+                                firearmInfoJson.Model = firearmInfo.Model;
+                                firearmInfoJson.NewUsed = "Used";
+                                firearmInfoJson.SerialNumber = firearmInfo.SerialNumber;
+                                firearmInfoJson.Status = firearmInfo.Status;
+                                firearmInfoJson.TypeOfAction = firearmInfo.TypeOfAction;
+                                firearmInfoJson.UPC = "";
+                                firearmInfoJson.Importer = firearmInfo.Importer;
+
+                                return firearmInfoJson;
+                            }
+                            return null;
+                        }
                     default:
                         return null;
                 }
