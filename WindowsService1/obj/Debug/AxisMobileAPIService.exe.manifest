@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kkJ7iKpGTIQTcDnIO01fShRpcvtUZA3BaX8aeKv9zgI=</dsig:DigestValue>
+        <dsig:DigestValue>ilhWwxKiuZ7ep1lwSIx6XM9OV7tw2IaZo+yLyPef1W4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -78,14 +78,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RestWCFServiceLibrary.dll" size="215552">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RestWCFServiceLibrary.dll" size="216064">
       <assemblyIdentity name="RestWCFServiceLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ifdc6X+TEBkl7h71M1Ee6Z5m+PekuGtYqwdiE4PM5yI=</dsig:DigestValue>
+        <dsig:DigestValue>g+1+eMr4ZocX2VMCpo4Y8kPiQCIccozrstVZ8e9yfjI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

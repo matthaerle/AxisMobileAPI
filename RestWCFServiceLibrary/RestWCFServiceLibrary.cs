@@ -406,7 +406,7 @@ namespace RestWCFServiceLibrary
                 switch (firearmStock.BoundBookType)
                 {
                     case "NON-NFA":
-                    case "NFA-NFA":
+                    case "NFA":
                         using (var arsnet = new ARSNETEntities())
                         {
                             //Getting CompanyID and StoreID
@@ -524,6 +524,7 @@ namespace RestWCFServiceLibrary
                                                    where bb.InvNbr == firearmStock.Log
                                                    && bb.IsLatestRevision == true
                                                    && bb.Active == true
+                                                   && bb.TypeOfAction == ft.TypeDesc
                                                    select bb).SingleOrDefault();
                                 firearmInfoJson.InventoryNumber = firearmInfo.InventoryNumber;
                                 firearmInfoJson.Description = firearmInfo.Description;
@@ -583,6 +584,7 @@ namespace RestWCFServiceLibrary
                                                    where bb.InvNbr == firearmStock.Log
                                                    && bb.IsLatestRevision == true
                                                    && bb.Active == true
+                                                   && bb.TypeOfAction == ft.TypeDesc
                                                    select bb).SingleOrDefault();
                                 firearmInfoJson.InventoryNumber = firearmInfo.InventoryNumber;
                                 firearmInfoJson.Description = firearmInfo.Description;
