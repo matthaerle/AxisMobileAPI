@@ -102,5 +102,13 @@ namespace RestWCFServiceLibrary
             ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "GetFirearmInformation")]
         FirearmInfo GetFirearmInformation(FirearmStockScan firearmStock);
+
+        [OperationContract]
+        [WebInvoke(
+            Method = "POST",
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "GetEmployeeRoles")]
+        List<EmployeeRoles> GetEmployeeRoles(CurrentEmployee currentEmployee);
     }
 }

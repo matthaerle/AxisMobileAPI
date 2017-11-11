@@ -92,6 +92,9 @@ namespace RestWCFServiceLibrary.Entities
         public bool ReceiveFirearmSerialNumber { get; set; }
         public bool ReceiveNonFirearmSerialNumber { get; set; }
         public bool IsCreditHoldEnabled { get; set; }
+        public bool TaxOutboundTradeFullAmount { get; set; }
+        public int RenewalDaysBefore { get; set; }
+        public int RenewalDaysAfter { get; set; }
     
         public virtual Company Company { get; set; }
     }

@@ -41,5 +41,7 @@ namespace RestWCFServiceLibrary.Entities
         public virtual DbSet<SerialUPC> SerialUPCs { get; set; }
         public virtual DbSet<FirearmType> FirearmTypes { get; set; }
         public virtual DbSet<GunsmithFirearmInventory> GunsmithFirearmInventories { get; set; }
+        public virtual DbSet<EmployeeXRole> EmployeeXRoles { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
     }
 }

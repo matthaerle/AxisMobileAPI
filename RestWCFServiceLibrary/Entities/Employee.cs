@@ -20,6 +20,7 @@ namespace RestWCFServiceLibrary.Entities
             this.InventoryGroups = new HashSet<InventoryGroup>();
             this.InventoryGroups1 = new HashSet<InventoryGroup>();
             this.ProductStockAdjustments = new HashSet<ProductStockAdjustment>();
+            this.EmployeeXRoles = new HashSet<EmployeeXRole>();
         }
     
         public int EmployeeID { get; set; }
@@ -51,5 +52,7 @@ namespace RestWCFServiceLibrary.Entities
         public virtual ICollection<InventoryGroup> InventoryGroups1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductStockAdjustment> ProductStockAdjustments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EmployeeXRole> EmployeeXRoles { get; set; }
     }
 }

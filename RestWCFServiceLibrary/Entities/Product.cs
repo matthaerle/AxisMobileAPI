@@ -78,6 +78,7 @@ namespace RestWCFServiceLibrary.Entities
         public bool HasFirearmInventory { get; set; }
         public int ManufacturerCommittedQty { get; set; }
         public int OriginatingStoreId { get; set; }
+        public short Velocity { get; set; }
     
         public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

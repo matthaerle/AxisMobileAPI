@@ -14,7 +14,7 @@ namespace RestWCFServiceLibrary
         {
             try
             {
-                List<SendInventoryGroup> inventoryGroupsList = new List<SendInventoryGroup>();
+                var inventoryGroupsList = new List<SendInventoryGroup>();
                 using (var arsnet = new ARSNETEntities())
                 {
                     /*var invGroups = (from i in arsnet.InventoryGroups
@@ -27,10 +27,12 @@ namespace RestWCFServiceLibrary
                                      select i);
                     foreach (var groups in invGroups)
                     {
-                        SendInventoryGroup inventoryGroups = new SendInventoryGroup();
-                        inventoryGroups.InventoryGroupID = groups.InventoryGroupID;
-                        inventoryGroups.GroupName = groups.GroupName;
-                        inventoryGroups.ProductCount = groups.InventoryGroupProducts.Count;
+                        var inventoryGroups = new SendInventoryGroup
+                        {
+                            InventoryGroupID = groups.InventoryGroupID,
+                            GroupName = groups.GroupName,
+                            ProductCount = groups.InventoryGroupProducts.Count
+                        };
                         inventoryGroupsList.Add(inventoryGroups);
                     }
                                  }
@@ -46,7 +48,7 @@ namespace RestWCFServiceLibrary
         {
             try
             {
-                List<ProductView> products = new List<ProductView>();
+                var products = new List<ProductView>();
                 using (var arsnet = new ARSNETEntities())
                 {
                     //var product = from p in arsnet.Products
@@ -71,23 +73,25 @@ namespace RestWCFServiceLibrary
                                     });
                     foreach (var prod in productA)
                     {
-                        ProductView productView = new ProductView();
-                        productView.ProductUPC = prod.Products.ProductUPC;
-                        productView.MinLevel = prod.Products.MinLevel;
-                        productView.MaxLevel = prod.Products.MaxLevel;
-                        productView.ItemNmbr = prod.Products.ItemNmbr;
-                        productView.Price = prod.Products.Price;
-                        productView.ShortDescription = prod.Products.ShortDescription;
-                        productView.PhysicalQoH = prod.Products.PhysicalQoH;
-                        productView.QtyOnOrder = prod.Products.QtyOnOrder;
-                        productView.QtyCommitted = prod.Products.QtyCommitted;
-                        productView.Manufacturer = prod.Products.Manufacturer.Name;
-                        productView.Department = prod.Products.Department.Name;
-                        productView.ProductID = prod.Products.ProductID;
-                        productView.Active = prod.Products.Active;
-                        productView.IsStock = prod.Products.IsStockItem;
-                        productView.IsFirearm = prod.Products.IsFirearm;
-                        productView.IsSerialNonFirearm = prod.s;
+                        var productView = new ProductView
+                        {
+                            ProductUPC = prod.Products.ProductUPC,
+                            MinLevel = prod.Products.MinLevel,
+                            MaxLevel = prod.Products.MaxLevel,
+                            ItemNmbr = prod.Products.ItemNmbr,
+                            Price = prod.Products.Price,
+                            ShortDescription = prod.Products.ShortDescription,
+                            PhysicalQoH = prod.Products.PhysicalQoH,
+                            QtyOnOrder = prod.Products.QtyOnOrder,
+                            QtyCommitted = prod.Products.QtyCommitted,
+                            Manufacturer = prod.Products.Manufacturer.Name,
+                            Department = prod.Products.Department.Name,
+                            ProductID = prod.Products.ProductID,
+                            Active = prod.Products.Active,
+                            IsStock = prod.Products.IsStockItem,
+                            IsFirearm = prod.Products.IsFirearm,
+                            IsSerialNonFirearm = prod.s
+                        };
                         products.Add(productView);
                     }
 
@@ -103,7 +107,7 @@ namespace RestWCFServiceLibrary
         {
             try
             {
-                List<ProductView> products = new List<ProductView>();
+                var products = new List<ProductView>();
                 using (var arsnet = new ARSNETEntities())
                 {
                     var product = (from p in arsnet.Products
@@ -111,19 +115,21 @@ namespace RestWCFServiceLibrary
                                    select p);
                     foreach (var prod in product)
                     {
-                        ProductView productView = new ProductView();
-                        productView.ProductUPC = prod.ProductUPC;
-                        productView.MinLevel = prod.MinLevel;
-                        productView.MaxLevel = prod.MaxLevel;
-                        productView.ItemNmbr = prod.ItemNmbr;
-                        productView.Price = prod.Price;
-                        productView.ShortDescription = prod.ShortDescription;
-                        productView.PhysicalQoH = prod.PhysicalQoH;
-                        productView.QtyOnOrder = prod.QtyOnOrder;
-                        productView.QtyCommitted = prod.QtyCommitted;
-                        productView.Manufacturer = prod.Manufacturer.Name;
-                        productView.Department = prod.Department.Name;
-                        productView.ProductID = prod.ProductID;
+                        var productView = new ProductView
+                        {
+                            ProductUPC = prod.ProductUPC,
+                            MinLevel = prod.MinLevel,
+                            MaxLevel = prod.MaxLevel,
+                            ItemNmbr = prod.ItemNmbr,
+                            Price = prod.Price,
+                            ShortDescription = prod.ShortDescription,
+                            PhysicalQoH = prod.PhysicalQoH,
+                            QtyOnOrder = prod.QtyOnOrder,
+                            QtyCommitted = prod.QtyCommitted,
+                            Manufacturer = prod.Manufacturer.Name,
+                            Department = prod.Department.Name,
+                            ProductID = prod.ProductID
+                        };
 
                         products.Add(productView);
                     }
@@ -140,7 +146,7 @@ namespace RestWCFServiceLibrary
         {
             try
             {
-                ProductView productView = new ProductView();
+                var productView = new ProductView();
                 using (var arsnet = new ARSNETEntities())
                 {
                     var groupProduct = (from gp in arsnet.InventoryGroupProducts
@@ -180,10 +186,10 @@ namespace RestWCFServiceLibrary
                                    where inv.Product.ProductUPC == submitItemCount.ProductUPC
                                    && inv.InventoryGroupID == submitItemCount.GroupID
                                    select inv).SingleOrDefault();
-                    int groupId = submitItemCount.GroupID;
-                    Int64 groupProductId = invInfo.InventoryGroupProductID;
+                    var groupId = submitItemCount.GroupID;
+                    var groupProductId = invInfo.InventoryGroupProductID;
 
-                    InventoryGroupProductByMachine invGrpByMach = new InventoryGroupProductByMachine
+                    var invGrpByMach = new InventoryGroupProductByMachine
                     {
                         InventoryGroupProductID = invInfo.InventoryGroupProductID,
                         Count = submitItemCount.CountQty,
@@ -194,12 +200,12 @@ namespace RestWCFServiceLibrary
                     };
                     arsnet.InventoryGroupProductByMachines.Add(invGrpByMach);
                     arsnet.SaveChanges();
-                    UpdateStatus updateStatus = new UpdateStatus { IsSuccesfull = true };
+                    var updateStatus = new UpdateStatus { IsSuccesfull = true };
                     return updateStatus;
                 }
             } catch (Exception e)
             {
-                UpdateStatus updateStatus = new UpdateStatus { IsSuccesfull = false};
+                var updateStatus = new UpdateStatus { IsSuccesfull = false};
                 EventLog.WriteEntry("Axis Mobile API", e.Message + " \n " + e.GetBaseException());
                 return updateStatus;
             }
@@ -212,7 +218,7 @@ namespace RestWCFServiceLibrary
                 //EventLog.WriteEntry("Axis Mobile API", update.ProductID.ToString());
                 using (var arsnet = new ARSNETEntities())
                 {
-                    Int64 productID = update.ProductID;
+                    var productID = update.ProductID;
                     var product = (from p in arsnet.Products
                                    where p.ProductID == productID
                                    select p).FirstOrDefault();
@@ -220,7 +226,7 @@ namespace RestWCFServiceLibrary
                     product.MaxLevel = update.MaxLevel;
                     product.UpdateUserID = update.EmployeeID;
                     arsnet.SaveChanges();
-                    UpdateStatus updateStatus = new UpdateStatus { IsSuccesfull = true};
+                    var updateStatus = new UpdateStatus { IsSuccesfull = true};
                     return updateStatus;
                 }
             } catch (Exception e)
@@ -463,20 +469,20 @@ namespace RestWCFServiceLibrary
             } catch (Exception e)
             {
                 EventLog.WriteEntry("Axis Mobile API", e.Message + " \n " + e.GetBaseException());
-                UpdateStatus updateStatus = new UpdateStatus { IsSuccesfull = false};
+                var updateStatus = new UpdateStatus { IsSuccesfull = false};
                 return updateStatus;
             }
         }
         public IsConnected VerifyConnection()
         {
-            IsConnected isConnected = new IsConnected { ConnectionVerified = true };
+            var isConnected = new IsConnected { ConnectionVerified = true };
             return isConnected;
         }
         public List<GetEmployees> GetActiveEmployees()
         {
             try
             {
-                List<GetEmployees> employees = new List<GetEmployees>();
+                var employees = new List<GetEmployees>();
                 using (var arsnet = new ARSNETEntities())
                 {
                     var emp = (from e in arsnet.Employees
@@ -485,14 +491,16 @@ namespace RestWCFServiceLibrary
                                select e);
                     foreach (var emps in emp)
                     {
-                        GetEmployees indEmployee = new GetEmployees();
-                        indEmployee.EmployeeID = emps.EmployeeID;
-                        indEmployee.FirstName = emps.FirstName;
-                        indEmployee.MiddleName = emps.MiddleName;
-                        indEmployee.LastName = emps.LastName;
-                        indEmployee.EmployeeNumber = emps.EmployeeNumber;
-                        indEmployee.PasswordEncrypted = emps.PasswordEncrypted;
-                        indEmployee.PasswordHashed = emps.PasswordHashed;
+                        var indEmployee = new GetEmployees
+                        {
+                            EmployeeID = emps.EmployeeID,
+                            FirstName = emps.FirstName,
+                            MiddleName = emps.MiddleName,
+                            LastName = emps.LastName,
+                            EmployeeNumber = emps.EmployeeNumber,
+                            PasswordEncrypted = emps.PasswordEncrypted,
+                            PasswordHashed = emps.PasswordHashed
+                        };
                         employees.Add(indEmployee);
                     }
                 }
@@ -516,7 +524,7 @@ namespace RestWCFServiceLibrary
                             FirearmInfo firearmInfoJson;
                             if (firearmStock.LogScanned)
                             {
-                                firearmInfoJson = new FirearmInfo();
+                                
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
                                                    where ft.Active == true
                                                    && ft.NFAind == false
@@ -526,24 +534,27 @@ namespace RestWCFServiceLibrary
                                                    && bb.Active == true
                                                    && bb.TypeOfAction == ft.TypeDesc
                                                    select bb).SingleOrDefault();
-                                firearmInfoJson.InventoryNumber = firearmInfo.InventoryNumber;
-                                firearmInfoJson.Description = firearmInfo.Description;
-                                firearmInfoJson.GaugeCaliber = firearmInfo.GaugeCaliber;
-                                firearmInfoJson.InvNbr = firearmInfo.InvNbr;
-                                firearmInfoJson.Manufacturer = firearmInfo.Manufacturer;
-                                firearmInfoJson.Model = firearmInfo.Model;
-                                firearmInfoJson.NewUsed = firearmInfo.NewUsed;
-                                firearmInfoJson.SerialNumber = firearmInfo.SerialNumber;
-                                firearmInfoJson.Status = firearmInfo.Status;
-                                firearmInfoJson.TypeOfAction = firearmInfo.TypeOfAction;
-                                firearmInfoJson.UPC = firearmInfo.UPC;
-                                firearmInfoJson.Importer = firearmInfo.Importer;
+                                firearmInfoJson = new FirearmInfo
+                                {
+                                    InventoryNumber = firearmInfo.InventoryNumber,
+                                    Description = firearmInfo.Description,
+                                    GaugeCaliber = firearmInfo.GaugeCaliber,
+                                    InvNbr = firearmInfo.InvNbr,
+                                    Manufacturer = firearmInfo.Manufacturer,
+                                    Model = firearmInfo.Model,
+                                    NewUsed = firearmInfo.NewUsed,
+                                    SerialNumber = firearmInfo.SerialNumber,
+                                    Status = firearmInfo.Status,
+                                    TypeOfAction = firearmInfo.TypeOfAction,
+                                    UPC = firearmInfo.UPC,
+                                    Importer = firearmInfo.Importer
+                                };
 
                                 return firearmInfoJson;
                             }
                             else if (firearmStock.SerialScanned)
                             {
-                                firearmInfoJson = new FirearmInfo();
+                                
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
                                                    where ft.Active == true
                                                    && ft.NFAind == false
@@ -553,18 +564,21 @@ namespace RestWCFServiceLibrary
                                                    && bb.Active == true
                                                    && bb.TypeOfAction == ft.TypeDesc
                                                    select bb).SingleOrDefault();
-                                firearmInfoJson.InventoryNumber = firearmInfo.InventoryNumber;
-                                firearmInfoJson.Description = firearmInfo.Description;
-                                firearmInfoJson.GaugeCaliber = firearmInfo.GaugeCaliber;
-                                firearmInfoJson.InvNbr = firearmInfo.InvNbr;
-                                firearmInfoJson.Manufacturer = firearmInfo.Manufacturer;
-                                firearmInfoJson.Model = firearmInfo.Model;
-                                firearmInfoJson.NewUsed = firearmInfo.NewUsed;
-                                firearmInfoJson.SerialNumber = firearmInfo.SerialNumber;
-                                firearmInfoJson.Status = firearmInfo.Status;
-                                firearmInfoJson.TypeOfAction = firearmInfo.TypeOfAction;
-                                firearmInfoJson.UPC = firearmInfo.UPC;
-                                firearmInfoJson.Importer = firearmInfo.Importer;
+                                firearmInfoJson = new FirearmInfo
+                                {
+                                    InventoryNumber = firearmInfo.InventoryNumber,
+                                    Description = firearmInfo.Description,
+                                    GaugeCaliber = firearmInfo.GaugeCaliber,
+                                    InvNbr = firearmInfo.InvNbr,
+                                    Manufacturer = firearmInfo.Manufacturer,
+                                    Model = firearmInfo.Model,
+                                    NewUsed = firearmInfo.NewUsed,
+                                    SerialNumber = firearmInfo.SerialNumber,
+                                    Status = firearmInfo.Status,
+                                    TypeOfAction = firearmInfo.TypeOfAction,
+                                    UPC = firearmInfo.UPC,
+                                    Importer = firearmInfo.Importer
+                                };
 
                                 return firearmInfoJson;
                             }
@@ -576,7 +590,7 @@ namespace RestWCFServiceLibrary
                             FirearmInfo firearmInfoJson;
                             if (firearmStock.LogScanned)
                             {
-                                firearmInfoJson = new FirearmInfo();
+                                
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
                                                    where ft.Active == true
                                                    && ft.NFAind == true
@@ -586,24 +600,27 @@ namespace RestWCFServiceLibrary
                                                    && bb.Active == true
                                                    && bb.TypeOfAction == ft.TypeDesc
                                                    select bb).SingleOrDefault();
-                                firearmInfoJson.InventoryNumber = firearmInfo.InventoryNumber;
-                                firearmInfoJson.Description = firearmInfo.Description;
-                                firearmInfoJson.GaugeCaliber = firearmInfo.GaugeCaliber;
-                                firearmInfoJson.InvNbr = firearmInfo.InvNbr;
-                                firearmInfoJson.Manufacturer = firearmInfo.Manufacturer;
-                                firearmInfoJson.Model = firearmInfo.Model;
-                                firearmInfoJson.NewUsed = firearmInfo.NewUsed;
-                                firearmInfoJson.SerialNumber = firearmInfo.SerialNumber;
-                                firearmInfoJson.Status = firearmInfo.Status;
-                                firearmInfoJson.TypeOfAction = firearmInfo.TypeOfAction;
-                                firearmInfoJson.UPC = firearmInfo.UPC;
-                                firearmInfoJson.Importer = firearmInfo.Importer;
+                                firearmInfoJson = new FirearmInfo
+                                {
+                                    InventoryNumber = firearmInfo.InventoryNumber,
+                                    Description = firearmInfo.Description,
+                                    GaugeCaliber = firearmInfo.GaugeCaliber,
+                                    InvNbr = firearmInfo.InvNbr,
+                                    Manufacturer = firearmInfo.Manufacturer,
+                                    Model = firearmInfo.Model,
+                                    NewUsed = firearmInfo.NewUsed,
+                                    SerialNumber = firearmInfo.SerialNumber,
+                                    Status = firearmInfo.Status,
+                                    TypeOfAction = firearmInfo.TypeOfAction,
+                                    UPC = firearmInfo.UPC,
+                                    Importer = firearmInfo.Importer
+                                };
 
                                 return firearmInfoJson;
                             }
                             else if (firearmStock.SerialScanned)
                             {
-                                firearmInfoJson = new FirearmInfo();
+                                
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
                                                    where ft.Active == true
                                                    && ft.NFAind == true
@@ -613,18 +630,21 @@ namespace RestWCFServiceLibrary
                                                    && bb.Active == true
                                                    && bb.TypeOfAction == ft.TypeDesc
                                                    select bb).SingleOrDefault();
-                                firearmInfoJson.InventoryNumber = firearmInfo.InventoryNumber;
-                                firearmInfoJson.Description = firearmInfo.Description;
-                                firearmInfoJson.GaugeCaliber = firearmInfo.GaugeCaliber;
-                                firearmInfoJson.InvNbr = firearmInfo.InvNbr;
-                                firearmInfoJson.Manufacturer = firearmInfo.Manufacturer;
-                                firearmInfoJson.Model = firearmInfo.Model;
-                                firearmInfoJson.NewUsed = firearmInfo.NewUsed;
-                                firearmInfoJson.SerialNumber = firearmInfo.SerialNumber;
-                                firearmInfoJson.Status = firearmInfo.Status;
-                                firearmInfoJson.TypeOfAction = firearmInfo.TypeOfAction;
-                                firearmInfoJson.UPC = firearmInfo.UPC;
-                                firearmInfoJson.Importer = firearmInfo.Importer;
+                                firearmInfoJson = new FirearmInfo
+                                {
+                                    InventoryNumber = firearmInfo.InventoryNumber,
+                                    Description = firearmInfo.Description,
+                                    GaugeCaliber = firearmInfo.GaugeCaliber,
+                                    InvNbr = firearmInfo.InvNbr,
+                                    Manufacturer = firearmInfo.Manufacturer,
+                                    Model = firearmInfo.Model,
+                                    NewUsed = firearmInfo.NewUsed,
+                                    SerialNumber = firearmInfo.SerialNumber,
+                                    Status = firearmInfo.Status,
+                                    TypeOfAction = firearmInfo.TypeOfAction,
+                                    UPC = firearmInfo.UPC,
+                                    Importer = firearmInfo.Importer
+                                };
 
                                 return firearmInfoJson;
                             }
@@ -636,7 +656,7 @@ namespace RestWCFServiceLibrary
                             FirearmInfo firearmInfoJson;
                             if (firearmStock.LogScanned)
                             {
-                                firearmInfoJson = new FirearmInfo();
+                                
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
                                                    where ft.Active == true
                                                    && ft.NFAind == false
@@ -646,24 +666,28 @@ namespace RestWCFServiceLibrary
                                                    && bb.Active == true
                                                    && bb.TypeOfAction == ft.TypeDesc
                                                    select bb).SingleOrDefault();
-                                firearmInfoJson.InventoryNumber = firearmInfo.GunsmithFirearmInventoryID;
-                                firearmInfoJson.Description = "Gunsmithing Firearm";
-                                firearmInfoJson.GaugeCaliber = firearmInfo.GaugeCaliber;
-                                firearmInfoJson.InvNbr = firearmInfo.LogNumber;
-                                firearmInfoJson.Manufacturer = firearmInfo.Manufacturer;
-                                firearmInfoJson.Model = firearmInfo.Model;
-                                firearmInfoJson.NewUsed = "Used";
-                                firearmInfoJson.SerialNumber = firearmInfo.SerialNumber;
-                                firearmInfoJson.Status = firearmInfo.Status;
-                                firearmInfoJson.TypeOfAction = firearmInfo.TypeOfAction;
-                                firearmInfoJson.UPC = "";
-                                firearmInfoJson.Importer = firearmInfo.Importer;
+                                firearmInfoJson =
+                                    new FirearmInfo
+                                    {
+                                        InventoryNumber = firearmInfo.GunsmithFirearmInventoryID,
+                                        Description = "Gunsmithing Firearm",
+                                        GaugeCaliber = firearmInfo.GaugeCaliber,
+                                        InvNbr = firearmInfo.LogNumber,
+                                        Manufacturer = firearmInfo.Manufacturer,
+                                        Model = firearmInfo.Model,
+                                        NewUsed = "Used",
+                                        SerialNumber = firearmInfo.SerialNumber,
+                                        Status = firearmInfo.Status,
+                                        TypeOfAction = firearmInfo.TypeOfAction,
+                                        UPC = "",
+                                        Importer = firearmInfo.Importer
+                                    };
 
                                 return firearmInfoJson;
                             }
                             else if (firearmStock.SerialScanned)
                             {
-                                firearmInfoJson = new FirearmInfo();
+                                
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
                                                    where ft.Active == true
                                                    && ft.NFAind == false
@@ -673,18 +697,22 @@ namespace RestWCFServiceLibrary
                                                    && bb.Active == true
                                                    && bb.TypeOfAction == ft.TypeDesc
                                                    select bb).SingleOrDefault();
-                                firearmInfoJson.InventoryNumber = firearmInfo.GunsmithFirearmInventoryID;
-                                firearmInfoJson.Description = "Gunsmithing Firearm";
-                                firearmInfoJson.GaugeCaliber = firearmInfo.GaugeCaliber;
-                                firearmInfoJson.InvNbr = firearmInfo.LogNumber;
-                                firearmInfoJson.Manufacturer = firearmInfo.Manufacturer;
-                                firearmInfoJson.Model = firearmInfo.Model;
-                                firearmInfoJson.NewUsed = "Used";
-                                firearmInfoJson.SerialNumber = firearmInfo.SerialNumber;
-                                firearmInfoJson.Status = firearmInfo.Status;
-                                firearmInfoJson.TypeOfAction = firearmInfo.TypeOfAction;
-                                firearmInfoJson.UPC = "";
-                                firearmInfoJson.Importer = firearmInfo.Importer;
+                                firearmInfoJson =
+                                    new FirearmInfo
+                                    {
+                                        InventoryNumber = firearmInfo.GunsmithFirearmInventoryID,
+                                        Description = "Gunsmithing Firearm",
+                                        GaugeCaliber = firearmInfo.GaugeCaliber,
+                                        InvNbr = firearmInfo.LogNumber,
+                                        Manufacturer = firearmInfo.Manufacturer,
+                                        Model = firearmInfo.Model,
+                                        NewUsed = "Used",
+                                        SerialNumber = firearmInfo.SerialNumber,
+                                        Status = firearmInfo.Status,
+                                        TypeOfAction = firearmInfo.TypeOfAction,
+                                        UPC = "",
+                                        Importer = firearmInfo.Importer
+                                    };
 
                                 return firearmInfoJson;
                             }
@@ -695,6 +723,35 @@ namespace RestWCFServiceLibrary
                 }
                 
                 
+            }
+            catch (Exception e)
+            {
+                EventLog.WriteEntry("Axis Mobile API", e.Message + " \n " + e.GetBaseException());
+                return null;
+            }
+        }
+
+        public List<EmployeeRoles> GetEmployeeRoles(CurrentEmployee currentEmployee)
+        {
+            try
+            {
+                var roles = new List<EmployeeRoles>();
+                using (var arsnet = new ARSNETEntities())
+                {
+                    var role = (from ri in arsnet.EmployeeXRoles
+                        where ri.EmployeeID == currentEmployee.EmployeeID
+                        select ri);
+                    foreach (var rls in role)
+                    {
+                        var employeeRoles = new EmployeeRoles
+                        {
+                            RoleID = rls.Role.RoleID,
+                            RoleDiscription = rls.Role.RoleDescription
+                        };
+                        roles.Add(employeeRoles);
+                    }
+                }
+                return roles;
             }
             catch (Exception e)
             {

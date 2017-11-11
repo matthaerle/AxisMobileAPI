@@ -36,6 +36,10 @@
         <AssociationConnector Association="ARSNETModel.FK_SerialUPC_Product" />
         <EntityTypeShape EntityType="ARSNETModel.FirearmType" Width="1.5" PointX="10.375" PointY="0.75" />
         <EntityTypeShape EntityType="ARSNETModel.GunsmithFirearmInventory" Width="1.5" PointX="13.375" PointY="12.75" />
+        <EntityTypeShape EntityType="ARSNETModel.EmployeeXRole" Width="1.5" PointX="11.625" PointY="4.625" />
+        <EntityTypeShape EntityType="ARSNETModel.Role" Width="1.5" PointX="9.375" PointY="30.25" />
+        <AssociationConnector Association="ARSNETModel.FK_EmployeeXRole_Employee" />
+        <AssociationConnector Association="ARSNETModel.FK_EmployeeXRole_Role" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

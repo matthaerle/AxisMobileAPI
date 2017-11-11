@@ -93,6 +93,9 @@
     <Property Name="ReceiveFirearmSerialNumber" Type="bit" Nullable="false" />
     <Property Name="ReceiveNonFirearmSerialNumber" Type="bit" Nullable="false" />
     <Property Name="IsCreditHoldEnabled" Type="bit" Nullable="false" />
+    <Property Name="TaxOutboundTradeFullAmount" Type="bit" Nullable="false" />
+    <Property Name="RenewalDaysBefore" Type="int" Nullable="false" />
+    <Property Name="RenewalDaysAfter" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Department">
     <Key>
@@ -128,6 +131,16 @@
     <Property Name="IsLockedOut" Type="bit" Nullable="false" />
     <Property Name="LockedOutDateTime" Type="datetime" />
     <Property Name="QuickLogin" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="EmployeeXRole">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="FirearmCount">
     <Key>
@@ -364,6 +377,7 @@
     <Property Name="HasFirearmInventory" Type="bit" Nullable="false" />
     <Property Name="ManufacturerCommittedQty" Type="int" Nullable="false" />
     <Property Name="OriginatingStoreId" Type="int" Nullable="false" />
+    <Property Name="Velocity" Type="smallint" Nullable="false" />
   </EntityType>
   <EntityType Name="ProductStockAdjustment">
     <Key>
@@ -388,6 +402,20 @@
     <Property Name="AverageCost" Type="money" Nullable="false" />
     <Property Name="LastCost" Type="money" Nullable="false" />
   </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="RoleDescription" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="UpdateUserID" Type="int" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateMachineName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="AssemblyName" Type="varchar" MaxLength="250" />
+  </EntityType>
   <EntityType Name="SerialUPC">
     <Key>
       <PropertyRef Name="SerialUPCID" />
@@ -410,6 +438,30 @@
       </Principal>
       <Dependent Role="CompanyStore">
         <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeXRole_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeeXRole" Type="Self.EmployeeXRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeXRole">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeXRole_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="EmployeeXRole" Type="Self.EmployeeXRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="EmployeeXRole">
+        <PropertyRef Name="RoleID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -586,6 +638,7 @@
     <EntitySet Name="CompanyStore" EntityType="Self.CompanyStore" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeXRole" EntityType="Self.EmployeeXRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FirearmCount" EntityType="Self.FirearmCount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FirearmInventory" EntityType="Self.FirearmInventory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FirearmType" EntityType="Self.FirearmType" Schema="dbo" store:Type="Tables" />
@@ -597,10 +650,19 @@
     <EntitySet Name="OutboundFirearm" EntityType="Self.OutboundFirearm" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductStockAdjustment" EntityType="Self.ProductStockAdjustment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SerialUPC" EntityType="Self.SerialUPC" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CompanyStore_Company" Association="Self.FK_CompanyStore_Company">
       <End Role="Company" EntitySet="Company" />
       <End Role="CompanyStore" EntitySet="CompanyStore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeXRole_Employee" Association="Self.FK_EmployeeXRole_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeXRole" EntitySet="EmployeeXRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeXRole_Role" Association="Self.FK_EmployeeXRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="EmployeeXRole" EntitySet="EmployeeXRole" />
     </AssociationSet>
     <AssociationSet Name="FK_FirearmCount_FirearmInventory" Association="Self.FK_FirearmCount_FirearmInventory">
       <End Role="FirearmInventory" EntitySet="FirearmInventory" />

@@ -28,3 +28,15 @@ C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestful
 C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.csprojResolveAssemblyReference.cache
 C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.dll
 C:\Users\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.pdb
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.dll.config
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.dll
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\RestWCFServiceLibrary.pdb
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\AutoMapper.dll
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.dll
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.SqlServer.dll
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\AutoMapper.xml
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.xml
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.csprojResolveAssemblyReference.cache
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.dll
+E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\WcfRestfulWithWindowsHostDemo_v1\RestWCFServiceLibrary\obj\Debug\RestWCFServiceLibrary.pdb

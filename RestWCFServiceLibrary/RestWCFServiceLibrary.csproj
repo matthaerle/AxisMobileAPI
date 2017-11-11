@@ -90,6 +90,9 @@
     <Compile Include="Entities\Employee.cs">
       <DependentUpon>arsnet.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\EmployeeXRole.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\FirearmCount.cs">
       <DependentUpon>arsnet.tt</DependentUpon>
     </Compile>
@@ -123,10 +126,15 @@
     <Compile Include="Entities\ProductStockAdjustment.cs">
       <DependentUpon>arsnet.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Role.cs">
+      <DependentUpon>arsnet.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\SerialUPC.cs">
       <DependentUpon>arsnet.tt</DependentUpon>
     </Compile>
     <Compile Include="IRestWCFServiceLibrary.cs" />
+    <Compile Include="MethodObject\CurrentEmployee.cs" />
+    <Compile Include="MethodObject\EmployeeRoles.cs" />
     <Compile Include="MethodObject\FirearmInfo.cs" />
     <Compile Include="MethodObject\GetEmployees.cs" />
     <Compile Include="MethodObject\IsConnected.cs" />

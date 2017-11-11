@@ -38,6 +38,7 @@
     <NavigationProperty Name="InventoryGroups" Relationship="Self.FK_InventoryGroup_Employee_CreatedEmployeeId" FromRole="Employee" ToRole="InventoryGroup" />
     <NavigationProperty Name="InventoryGroups1" Relationship="Self.FK_InventoryGroup_Employee_LastCountSubmitEmployeeId" FromRole="Employee" ToRole="InventoryGroup" />
     <NavigationProperty Name="ProductStockAdjustments" Relationship="Self.FK_ProductStockAdjustment_Employee" FromRole="Employee" ToRole="ProductStockAdjustment" />
+    <NavigationProperty Name="EmployeeXRoles" Relationship="ARSNETModel.FK_EmployeeXRole_Employee" FromRole="Employee" ToRole="EmployeeXRole" />
   </EntityType>
   <EntityType Name="FirearmCount">
     <Key>
@@ -171,6 +172,7 @@
     <NavigationProperty Name="SerialUPCs" Relationship="ARSNETModel.FK_SerialUPC_Product" FromRole="Product" ToRole="SerialUPC" />
     <Property Name="ManufacturerCommittedQty" Type="Int32" Nullable="false" />
     <Property Name="OriginatingStoreId" Type="Int32" Nullable="false" />
+    <Property Name="Velocity" Type="Int16" Nullable="false" />
   </EntityType>
   <EntityType Name="ProductStockAdjustment">
     <Key>
@@ -395,6 +397,16 @@
     </AssociationSet>
     <EntitySet Name="FirearmTypes" EntityType="ARSNETModel.FirearmType" />
     <EntitySet Name="GunsmithFirearmInventories" EntityType="ARSNETModel.GunsmithFirearmInventory" />
+    <EntitySet Name="EmployeeXRoles" EntityType="ARSNETModel.EmployeeXRole" />
+    <EntitySet Name="Roles" EntityType="ARSNETModel.Role" />
+    <AssociationSet Name="FK_EmployeeXRole_Employee" Association="ARSNETModel.FK_EmployeeXRole_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeXRole" EntitySet="EmployeeXRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeXRole_Role" Association="ARSNETModel.FK_EmployeeXRole_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="EmployeeXRole" EntitySet="EmployeeXRoles" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="FirearmInventory">
     <Key>
@@ -584,6 +596,9 @@
     <Property Name="ReceiveNonFirearmSerialNumber" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Company" Relationship="ARSNETModel.FK_CompanyStore_Company" FromRole="CompanyStore" ToRole="Company" />
     <Property Name="IsCreditHoldEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="TaxOutboundTradeFullAmount" Type="Boolean" Nullable="false" />
+    <Property Name="RenewalDaysBefore" Type="Int32" Nullable="false" />
+    <Property Name="RenewalDaysAfter" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Company">
     <Key>
@@ -689,4 +704,55 @@
     <Property Name="BoundBookRecordGroupID" Type="Int32" />
     <Property Name="AdditionalInformation" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="EmployeeXRole">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="StoreID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="ARSNETModel.FK_EmployeeXRole_Employee" FromRole="EmployeeXRole" ToRole="Employee" />
+    <NavigationProperty Name="Role" Relationship="ARSNETModel.FK_EmployeeXRole_Role" FromRole="EmployeeXRole" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="StoreID" Type="Int32" Nullable="false" />
+    <Property Name="RoleDescription" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateUserID" Type="Int32" Nullable="false" />
+    <Property Name="UpdateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateMachineName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="AssemblyName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EmployeeXRoles" Relationship="ARSNETModel.FK_EmployeeXRole_Role" FromRole="Role" ToRole="EmployeeXRole" />
+  </EntityType>
+  <Association Name="FK_EmployeeXRole_Employee">
+    <End Type="ARSNETModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="ARSNETModel.EmployeeXRole" Role="EmployeeXRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeXRole">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeXRole_Role">
+    <End Type="ARSNETModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="ARSNETModel.EmployeeXRole" Role="EmployeeXRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="EmployeeXRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

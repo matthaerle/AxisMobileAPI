@@ -103,6 +103,7 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="ARSNETModel.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Velocity" ColumnName="Velocity" />
           <ScalarProperty Name="OriginatingStoreId" ColumnName="OriginatingStoreId" />
           <ScalarProperty Name="ManufacturerCommittedQty" ColumnName="ManufacturerCommittedQty" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -255,6 +256,9 @@
     <EntitySetMapping Name="CompanyStores">
       <EntityTypeMapping TypeName="ARSNETModel.CompanyStore">
         <MappingFragment StoreEntitySet="CompanyStore">
+          <ScalarProperty Name="RenewalDaysAfter" ColumnName="RenewalDaysAfter" />
+          <ScalarProperty Name="RenewalDaysBefore" ColumnName="RenewalDaysBefore" />
+          <ScalarProperty Name="TaxOutboundTradeFullAmount" ColumnName="TaxOutboundTradeFullAmount" />
           <ScalarProperty Name="IsCreditHoldEnabled" ColumnName="IsCreditHoldEnabled" />
           <ScalarProperty Name="ReceiveNonFirearmSerialNumber" ColumnName="ReceiveNonFirearmSerialNumber" />
           <ScalarProperty Name="ReceiveFirearmSerialNumber" ColumnName="ReceiveFirearmSerialNumber" />
@@ -415,6 +419,31 @@
           <ScalarProperty Name="StoreID" ColumnName="StoreID" />
           <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
           <ScalarProperty Name="GunsmithFirearmInventoryID" ColumnName="GunsmithFirearmInventoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeXRoles">
+      <EntityTypeMapping TypeName="ARSNETModel.EmployeeXRole">
+        <MappingFragment StoreEntitySet="EmployeeXRole">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="ARSNETModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="AssemblyName" ColumnName="AssemblyName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UpdateMachineName" ColumnName="UpdateMachineName" />
+          <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+          <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
