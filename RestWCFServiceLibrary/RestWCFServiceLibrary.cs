@@ -524,16 +524,17 @@ namespace RestWCFServiceLibrary
                             FirearmInfo firearmInfoJson;
                             if (firearmStock.LogScanned)
                             {
-                                
+
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
-                                                   where ft.Active == true
-                                                   && ft.NFAind == false
-                                                   from bb in arsnet.FirearmInventories
-                                                   where bb.InvNbr == firearmStock.Log
-                                                   && bb.IsLatestRevision == true
-                                                   && bb.Active == true
-                                                   && bb.TypeOfAction == ft.TypeDesc
-                                                   select bb).SingleOrDefault();
+                                    where ft.Active == true
+                                          && ft.NFAind == false
+                                    from bb in arsnet.FirearmInventories
+                                    where bb.InvNbr == firearmStock.Log
+                                          && bb.IsLatestRevision == true
+                                          && bb.Active == true
+                                          && bb.TypeOfAction == ft.TypeDesc
+                                    orderby bb.FFLID descending
+                                    select bb).FirstOrDefault();
                                 firearmInfoJson = new FirearmInfo
                                 {
                                     InventoryNumber = firearmInfo.InventoryNumber,
@@ -554,16 +555,17 @@ namespace RestWCFServiceLibrary
                             }
                             else if (firearmStock.SerialScanned)
                             {
-                                
+
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
-                                                   where ft.Active == true
-                                                   && ft.NFAind == false
-                                                   from bb in arsnet.FirearmInventories
-                                                   where bb.SerialNumber == firearmStock.SerialNumber
-                                                   && bb.IsLatestRevision == true
-                                                   && bb.Active == true
-                                                   && bb.TypeOfAction == ft.TypeDesc
-                                                   select bb).SingleOrDefault();
+                                    where ft.Active == true
+                                          && ft.NFAind == false
+                                    from bb in arsnet.FirearmInventories
+                                    where bb.SerialNumber == firearmStock.SerialNumber
+                                          && bb.IsLatestRevision == true
+                                          && bb.Active == true
+                                          && bb.TypeOfAction == ft.TypeDesc
+                                    orderby      bb.FFLID descending 
+                                    select bb).FirstOrDefault();
                                 firearmInfoJson = new FirearmInfo
                                 {
                                     InventoryNumber = firearmInfo.InventoryNumber,
@@ -590,16 +592,17 @@ namespace RestWCFServiceLibrary
                             FirearmInfo firearmInfoJson;
                             if (firearmStock.LogScanned)
                             {
-                                
+
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
-                                                   where ft.Active == true
-                                                   && ft.NFAind == true
-                                                   from bb in arsnet.FirearmInventories
-                                                   where bb.InvNbr == firearmStock.Log
-                                                   && bb.IsLatestRevision == true
-                                                   && bb.Active == true
-                                                   && bb.TypeOfAction == ft.TypeDesc
-                                                   select bb).SingleOrDefault();
+                                    where ft.Active == true
+                                          && ft.NFAind == true
+                                    from bb in arsnet.FirearmInventories
+                                    where bb.InvNbr == firearmStock.Log
+                                          && bb.IsLatestRevision == true
+                                          && bb.Active == true
+                                          && bb.TypeOfAction == ft.TypeDesc
+                                    orderby bb.FFLID descending
+                                    select bb).FirstOrDefault();
                                 firearmInfoJson = new FirearmInfo
                                 {
                                     InventoryNumber = firearmInfo.InventoryNumber,
@@ -620,16 +623,17 @@ namespace RestWCFServiceLibrary
                             }
                             else if (firearmStock.SerialScanned)
                             {
-                                
+
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
-                                                   where ft.Active == true
-                                                   && ft.NFAind == true
-                                                   from bb in arsnet.FirearmInventories
-                                                   where bb.SerialNumber == firearmStock.SerialNumber
-                                                   && bb.IsLatestRevision == true
-                                                   && bb.Active == true
-                                                   && bb.TypeOfAction == ft.TypeDesc
-                                                   select bb).SingleOrDefault();
+                                    where ft.Active == true
+                                          && ft.NFAind == true
+                                    from bb in arsnet.FirearmInventories
+                                    where bb.SerialNumber == firearmStock.SerialNumber
+                                          && bb.IsLatestRevision == true
+                                          && bb.Active == true
+                                          && bb.TypeOfAction == ft.TypeDesc
+                                    orderby bb.FFLID descending
+                                    select bb).FirstOrDefault();
                                 firearmInfoJson = new FirearmInfo
                                 {
                                     InventoryNumber = firearmInfo.InventoryNumber,
@@ -656,16 +660,17 @@ namespace RestWCFServiceLibrary
                             FirearmInfo firearmInfoJson;
                             if (firearmStock.LogScanned)
                             {
-                                
+
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
-                                                   where ft.Active == true
-                                                   && ft.NFAind == false
-                                                   from bb in arsnet.GunsmithFirearmInventories
-                                                   where bb.LogNumber == firearmStock.Log
-                                                   && bb.IsLatestRevision == true
-                                                   && bb.Active == true
-                                                   && bb.TypeOfAction == ft.TypeDesc
-                                                   select bb).SingleOrDefault();
+                                    where ft.Active == true
+                                          && ft.NFAind == false
+                                    from bb in arsnet.GunsmithFirearmInventories
+                                    where bb.LogNumber == firearmStock.Log
+                                          && bb.IsLatestRevision == true
+                                          && bb.Active == true
+                                          && bb.TypeOfAction == ft.TypeDesc
+                                    orderby bb.FFLID descending
+                                    select bb).FirstOrDefault();
                                 firearmInfoJson =
                                     new FirearmInfo
                                     {
@@ -687,16 +692,17 @@ namespace RestWCFServiceLibrary
                             }
                             else if (firearmStock.SerialScanned)
                             {
-                                
+
                                 var firearmInfo = (from ft in arsnet.FirearmTypes
-                                                   where ft.Active == true
-                                                   && ft.NFAind == false
-                                                   from bb in arsnet.GunsmithFirearmInventories
-                                                   where bb.SerialNumber == firearmStock.SerialNumber
-                                                   && bb.IsLatestRevision == true
-                                                   && bb.Active == true
-                                                   && bb.TypeOfAction == ft.TypeDesc
-                                                   select bb).SingleOrDefault();
+                                    where ft.Active == true
+                                          && ft.NFAind == false
+                                    from bb in arsnet.GunsmithFirearmInventories
+                                    where bb.SerialNumber == firearmStock.SerialNumber
+                                          && bb.IsLatestRevision == true
+                                          && bb.Active == true
+                                          && bb.TypeOfAction == ft.TypeDesc
+                                    orderby bb.FFLID descending
+                                    select bb).FirstOrDefault();
                                 firearmInfoJson =
                                     new FirearmInfo
                                     {
