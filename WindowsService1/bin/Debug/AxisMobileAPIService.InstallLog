@@ -1,0 +1,50 @@
+﻿Installing assembly 'E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.InstallLog
+   assemblypath = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe
+Installing service MyRestWCFRestWinSer...
+Creating EventLog source MyRestWCFRestWinSer in log Application...
+Rolling back assembly 'E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.InstallLog
+   assemblypath = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe
+Restoring event log to previous state for source MyRestWCFRestWinSer.
+Installing assembly 'E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.InstallLog
+   assemblypath = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe
+Installing service MyRestWCFRestWinSer...
+Service MyRestWCFRestWinSer has been successfully installed.
+Creating EventLog source MyRestWCFRestWinSer in log Application...
+Installing service AxisMobileAPI...
+Creating EventLog source AxisMobileAPI in log Application...
+Rolling back assembly 'E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.InstallLog
+   assemblypath = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe
+Restoring event log to previous state for source AxisMobileAPI.
+Restoring event log to previous state for source MyRestWCFRestWinSer.
+Service MyRestWCFRestWinSer is being removed from the system...
+Service MyRestWCFRestWinSer was successfully removed from the system.
+Installing assembly 'E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe'.
+Affected parameters are:
+   i = 
+   logfile = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.InstallLog
+   assemblypath = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe
+   logtoconsole = 
+Installing service MyRestWCFRestWinSer...
+Service MyRestWCFRestWinSer has been successfully installed.
+Creating EventLog source MyRestWCFRestWinSer in log Application...
+Installing service AxisMobileAPI...
+Service AxisMobileAPI has been successfully installed.
+Creating EventLog source AxisMobileAPI in log Application...
+Committing assembly 'E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe'.
+Affected parameters are:
+   i = 
+   logfile = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.InstallLog
+   assemblypath = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\AxisMobileAPIService.exe
+   logtoconsole = 

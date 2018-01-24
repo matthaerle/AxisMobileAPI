@@ -1,0 +1,11 @@
+﻿Uninstalling assembly 'E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\app.publish\AxisMobileAPIService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\app.publish\AxisMobileAPIService.InstallLog
+   assemblypath = E:\mhaerle\Google Drive\AcuSport\Documents\Documents\SourceCode\AxisMobileAPI\WindowsService1\bin\Debug\app.publish\AxisMobileAPIService.exe
+Removing EventLog source AxisMobileAPI.
+Service AxisMobileAPI is being removed from the system...
+Service AxisMobileAPI was successfully removed from the system.
+Removing EventLog source MyRestWCFRestWinSer.
+Service MyRestWCFRestWinSer is being removed from the system...
+Service MyRestWCFRestWinSer was successfully removed from the system.
